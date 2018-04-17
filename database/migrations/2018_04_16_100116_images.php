@@ -17,7 +17,6 @@ class Images extends Migration
             $table->increments('id_image')->unique();
             $table->integer('id_work');
             $table->timestamps();
-            $table->foreign('id_work')->references('id')->on('works');
         });
     }
 

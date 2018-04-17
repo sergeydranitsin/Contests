@@ -22,8 +22,7 @@ class Works extends Migration
             $table->boolean('is_verified');
             $table->integer('id_contest');
             $table->timestamps();
-            $table->foreign('id_creator')->references('id')->on('users');
-            $table->foreign('id_contest')->references('id')->on('contests');
+
         });
     }
 
