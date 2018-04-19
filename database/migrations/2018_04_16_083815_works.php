@@ -17,10 +17,10 @@ class Works extends Migration
             $table->increments('id')->unique();
             $table->string('name');
             $table->text('description');
-            $table->integer('id_creator');
+            $table->integer('id_creator')->unsigned();
             $table->integer('raiting');
             $table->boolean('is_verified');
-            $table->integer('id_contest');
+            $table->integer('id_contest')->unsigned();
             $table->timestamps();
 
         });
