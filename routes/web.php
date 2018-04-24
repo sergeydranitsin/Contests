@@ -26,3 +26,10 @@ Route::get('one_page', function (){
 Route::get('gallery_of_competitions', function (){
     return view('gallery_of_competitions');
 })->name("gallery_of_competitions");
+
+
+//API
+
+Route::get("/user", function(Request $request){
+    return Auth::user();
+});
