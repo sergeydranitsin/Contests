@@ -18,8 +18,8 @@ class Works extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('id_creator')->unsigned();
-            $table->integer('raiting');
-            $table->boolean('is_verified');
+            $table->float('raiting')->default(0);
+            $table->boolean('is_verified')->nullable();
             $table->integer('id_contest')->unsigned();
             $table->timestamps();
 
