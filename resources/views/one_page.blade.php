@@ -17,7 +17,8 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     <link href="css/contests.css" rel="stylesheet" type="text/css">
 
@@ -48,7 +49,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">***</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
             Menu
             <i class="fa fa-bars"></i>
         </button>
@@ -69,12 +72,23 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Контакты</a>
                 </li>
-                <li class="nav-item">
-                    <a id="auth" class="btn btn-primary  text-uppercase js-scroll-trigger btn_login" data-toggle="modal" data-target="#myModal_auth" >Вход</a>
-                </li>
-                <li class="nav-item">
-                    <a id="register" class="btn btn-primary  text-uppercase js-scroll-trigger btn_login" data-toggle="modal" data-target="#myModal_register" >Регистрация</a>
-                </li>
+                @if (Auth::check())
+                    <li class="nav-item">
+                        <span class="nav-link js-scroll-trigger" href="#contact">Привет, {{ Auth::user()->first_name
+                        }}!</span>
+                    </li>
+                    <li class="nav-item">
+                        <a id="auth" class="btn btn-primary  text-uppercase js-scroll-trigger btn_login" href="/logout">Выход</a>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a id="auth" class="btn btn-primary  text-uppercase js-scroll-trigger btn_login"
+                           data-toggle="modal" data-target="#myModal_auth"
+                                {{--href="/login/vk"--}}
+                        >Вход</a>
+                    </li>
+
+                @endif
             </ul>
         </div>
     </div>
@@ -93,7 +107,7 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-                <form id="form_register" >
+                <form id="form_register">
                     <input type="text" name="lastname" class="form-control form_register" placeholder="Фамилия...">
                     <input type="text" name="name" class="form-control form_register" placeholder="Имя...">
                     <input type="text" name="patronymic" class="form-control form_register" placeholder="Отчество...">
@@ -101,13 +115,14 @@
                     <input type="email" name="email" class="form-control form_register" placeholder="E-mail...">
                     <input type="text" name="phone_number" class="form-control form_register" placeholder="Телефон...">
                     <input type="password" name="password" class="form-control form_register" placeholder="Пароль...">
-                    <input type="password" name="password_confirm" class="form-control form_register" placeholder="Подтверждение пароля...">
+                    <input type="password" name="password_confirm" class="form-control form_register"
+                           placeholder="Подтверждение пароля...">
                 </form>
             </div>
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" id="save_reg_btn" class="btn btn-primary" >Сохранить</button>
+                <button type="button" id="save_reg_btn" class="btn btn-primary">Сохранить</button>
             </div>
 
         </div>
@@ -125,16 +140,27 @@
             </div>
 
             <!-- Modal body -->
-            <div class="modal-body">
-                <form id="form_register" >
-                    <input type="email" name="email" class="form-control form_register" placeholder="E-mail...">
-                    <input type="password" name="password" class="form-control form_register" placeholder="Пароль...">
-                 </form>
-            </div>
+            <div class="modal-body align-items-center">
+                <a href="/login/vk">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/VK.com-logo.svg/192px-VK.com-logo.svg.png"
+                         height="100px"/>
+                </a>
 
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" id="auth_btn" class="btn btn-primary" >Войти</button>
+                <a href="/login/ok">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Ok_new_logo.png"
+                         height="100px"/>
+                </a>
+
+
+                {{--<form id="form_register">--}}
+                {{--<input type="email" name="email" class="form-control form_register" placeholder="E-mail...">--}}
+                {{--<input type="password" name="password" class="form-control form_register" placeholder="Пароль...">--}}
+                {{--</form>--}}
+                {{--</div>--}}
+
+                {{--<!-- Modal footer -->--}}
+                {{--<div class="modal-footer">--}}
+                {{--<button type="button" id="auth_btn" class="btn btn-primary">Войти</button>--}}
             </div>
 
         </div>
@@ -440,7 +466,8 @@
         </div>
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
+                    laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
             </div>
         </div>
     </div>
@@ -464,28 +491,34 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" id="name" type="text" placeholder="Your Name *" required data-validation-required-message="Please enter your name.">
+                                <input class="form-control" id="name" type="text" placeholder="Your Name *" required
+                                       data-validation-required-message="Please enter your name.">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="email" type="email" placeholder="Your Email *" required data-validation-required-message="Please enter your email address.">
+                                <input class="form-control" id="email" type="email" placeholder="Your Email *" required
+                                       data-validation-required-message="Please enter your email address.">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required data-validation-required-message="Please enter your phone number.">
+                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required
+                                       data-validation-required-message="Please enter your phone number.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <textarea class="form-control" id="message" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
+                                <textarea class="form-control" id="message" placeholder="Your Message *" required
+                                          data-validation-required-message="Please enter a message."></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                         <div class="col-lg-12 text-center">
                             <div id="success"></div>
-                            <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                            <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">
+                                Send Message
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -560,7 +593,8 @@
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
-                                Закрыть работу</button>
+                                Закрыть работу
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -593,7 +627,8 @@
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
-                                Закрыть работу</button>
+                                Закрыть работу
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -626,7 +661,8 @@
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
-                                Закрыть работу</button>
+                                Закрыть работу
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -659,7 +695,8 @@
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
-                                Закрыть работу</button>
+                                Закрыть работу
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -692,7 +729,8 @@
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
-                                Закрыть работу</button>
+                                Закрыть работу
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -725,7 +763,8 @@
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
-                                Закрыть работу</button>
+                                Закрыть работу
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -733,7 +772,6 @@
         </div>
     </div>
 </div>
-
 
 
 <!-- Bootstrap core JavaScript -->
