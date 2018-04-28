@@ -63,27 +63,17 @@
             <ul class="navbar-nav text-uppercase ml-auto">
 
 
-                <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">Добавить конкурс
-                        <i class="fa fa-plus-circle fa-2x" title="Добавить конкурс"></i>
-                    </a>
-                </li>
+                {{--<li class="nav-item">--}}
+                    {{--<a class="nav-link" style="cursor: pointer">Добавить конкурс--}}
+                        {{--<i class="fa fa-plus-circle fa-2x" title="Добавить конкурс"></i>--}}
+                    {{--</a>--}}
+                {{--</li>--}}
                 <li class="nav-item">
                     <a class="nav-link" style="cursor: pointer">Личный кабинет
                         <i class="fa fa-user fa-2x" title="Войти в личный кабинет"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    {{--<form class="form-inline my-2 my-lg-0 mr-lg-2">--}}
-                        {{--<div class="input-group" style="margin-top: 6px">--}}
-                            {{--<input class="form-control" type="text" placeholder="Поиск...">--}}
-                            {{--<span class="input-group-append">--}}
-                {{--<button class="btn btn-primary" type="button">--}}
-                  {{--<i class="fa fa-search"></i>--}}
-                {{--</button>--}}
-              {{--</span>--}}
-                        {{--</div>--}}
-                    {{--</form>--}}
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" style="cursor: pointer">
@@ -99,14 +89,6 @@
     <div class="container">
         <div class="intro-text">
 
-            {{--<div class="card" style="width:400px">--}}
-                {{--<img class="card-img-top" src="img/team/1.jpg" alt="Card image">--}}
-                {{--<div class="card-body">--}}
-                    {{--<h4 class="card-title">John Doe</h4>--}}
-                    {{--<p class="text_cards">Some example text.</p>--}}
-                    {{--<a href="#" class="btn btn-primary text-uppercase js-scroll-trigger btn_login">See Profile</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
