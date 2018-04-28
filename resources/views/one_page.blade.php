@@ -113,7 +113,6 @@
                     <input type="text" name="patronymic" class="form-control form_register" placeholder="Отчество...">
                     <input type="text" name="login" class="form-control form_register" placeholder="Логин...">
                     <input type="email" name="email" class="form-control form_register" placeholder="E-mail...">
-                    <input type="text" name="phone_number" class="form-control form_register" placeholder="Телефон...">
                     <input type="password" name="password" class="form-control form_register" placeholder="Пароль...">
                     <input type="password" name="password_confirm" class="form-control form_register"
                            placeholder="Подтверждение пароля...">

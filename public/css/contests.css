@@ -34,3 +34,35 @@
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 90%
 }
+
+
+.demo-card-wide.mdl-card {
+  /*width: 512px;*/
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('../img/team/1.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+.btn_look{
+  margin-top: 6%;
+}
+.mdl-card__title-text{
+  padding-top: 2%;
+}
+.mdl-card__title{
+  margin-top: 5%;
+}
+@media (min-width: 768px) {
+  header.masthead .intro-text {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+}
+header.masthead .intro-text {
+  padding-top: 150px !important;
+  padding-bottom: 100px !important;
+}
