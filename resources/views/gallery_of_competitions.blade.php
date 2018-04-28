@@ -40,6 +40,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -97,16 +99,68 @@
     <div class="container">
         <div class="intro-text">
 
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="img/team/1.jpg" alt="Card image">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="text_cards">Some example text.</p>
-                    <a href="#" class="btn btn-primary text-uppercase js-scroll-trigger btn_login">See Profile</a>
+            {{--<div class="card" style="width:400px">--}}
+                {{--<img class="card-img-top" src="img/team/1.jpg" alt="Card image">--}}
+                {{--<div class="card-body">--}}
+                    {{--<h4 class="card-title">John Doe</h4>--}}
+                    {{--<p class="text_cards">Some example text.</p>--}}
+                    {{--<a href="#" class="btn btn-primary text-uppercase js-scroll-trigger btn_login">See Profile</a>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Конкурс номер 1</h2>
+                            <div class="mdl-card__supporting-text">
+                                Описание данного конкурса...
+                            </div>
+                            {{--<div class="mdl-card__actions mdl-card--border">--}}
+                            {{--<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">--}}
+                            {{--Get Started--}}
+                            {{--</a>--}}
+                            {{--</div>--}}
+                            <div class="mdl-card__menu">
+                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect btn_look">
+                                    <i class="material-icons">Войти</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Конкурс номер 1</h2>
+                            <div class="mdl-card__supporting-text">
+                                Описание данного конкурса...
+                            </div>
+                            {{--<div class="mdl-card__actions mdl-card--border">--}}
+                            {{--<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">--}}
+                            {{--Get Started--}}
+                            {{--</a>--}}
+                            {{--</div>--}}
+                            <div class="mdl-card__menu">
+                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect btn_look">
+                                    <i class="material-icons">Войти</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
             </div>
 
         </div>
+
+
+
+
     </div>
 </header>
 
