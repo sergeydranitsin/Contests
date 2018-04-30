@@ -26,3 +26,7 @@ Route::get('one_page', function (){
 Route::get('gallery_of_competitions', function (){
     return view('gallery_of_competitions');
 })->name("gallery_of_competitions");
+
+Route::get('gallery_work', function (){
+    return view('gallery_work');
+})->name("gallery_work");
