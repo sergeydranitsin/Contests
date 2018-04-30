@@ -49,6 +49,9 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
+
+
+
         <form class="form-inline my-2 my-lg-0 mr-lg-2">
             <div class="input-group" style="margin-top: 6px">
                 <input class="form-control" type="text" placeholder="Поиск...">
@@ -63,11 +66,7 @@
             <ul class="navbar-nav text-uppercase ml-auto">
 
 
-                {{--<li class="nav-item">--}}
-                    {{--<a class="nav-link" style="cursor: pointer">Добавить конкурс--}}
-                        {{--<i class="fa fa-plus-circle fa-2x" title="Добавить конкурс"></i>--}}
-                    {{--</a>--}}
-                {{--</li>--}}
+
                 <li class="nav-item">
                     <a class="nav-link" style="cursor: pointer">Личный кабинет
                         <i class="fa fa-user fa-2x" title="Войти в личный кабинет"></i>
@@ -85,7 +84,7 @@
 </nav>
 
 
-<header class="masthead">
+<header class="page_background">
     <div class="container">
         <div class="intro-text">
 

@@ -116,13 +116,10 @@
                     <input type="password" name="password" class="form-control form_register" placeholder="Пароль...">
                     <input type="password" name="password_confirm" class="form-control form_register"
                            placeholder="Подтверждение пароля...">
+                    <button type="button" id="save_reg_btn" class="btn btn-primary btn_save">Сохранить</button>
                 </form>
             </div>
 
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" id="save_reg_btn" class="btn btn-primary">Сохранить</button>
-            </div>
 
         </div>
     </div>
@@ -151,15 +148,14 @@
                 </a>
 
 
-                {{--<form id="form_register">--}}
-                {{--<input type="email" name="email" class="form-control form_register" placeholder="E-mail...">--}}
-                {{--<input type="password" name="password" class="form-control form_register" placeholder="Пароль...">--}}
-                {{--</form>--}}
+                {{--<div class="modal-body">--}}
+                    {{--<form id="form_register">--}}
+                        {{--<input type="email" name="email" class="form-control form_register" placeholder="E-mail...">--}}
+                        {{--<input type="password" name="password" class="form-control form_register"--}}
+                               {{--placeholder="Пароль...">--}}
+                        {{--<button type="button" id="auth_btn" class="btn btn-primary btn_save">Войти</button>--}}
+                    {{--</form>--}}
                 {{--</div>--}}
-
-                {{--<!-- Modal footer -->--}}
-                {{--<div class="modal-footer">--}}
-                {{--<button type="button" id="auth_btn" class="btn btn-primary">Войти</button>--}}
             </div>
 
         </div>

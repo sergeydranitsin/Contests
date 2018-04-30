@@ -49,20 +49,42 @@
 }
 .btn_look{
   margin-top: 6%;
+  margin-left: 46%;
+}
+.btn_save{
+float: right;
 }
 .mdl-card__title-text{
   padding-top: 2%;
+  text-align: center;
+}
+.mdl-card__supporting-text{
+  text-align: center;
 }
 .mdl-card__title{
   margin-top: 5%;
 }
 @media (min-width: 768px) {
-  header.masthead .intro-text {
+  header.page_background .intro-text {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
   }
 }
-header.masthead .intro-text {
+header.page_background .intro-text {
   padding-top: 150px !important;
   padding-bottom: 100px !important;
+}
+
+/*.demo-card-square.mdl-card {*/
+  /*width: 320px;*/
+  /*height: 320px;*/
+/*}*/
+/*.demo-card-square > .mdl-card__title {*/
+  /*color: #fff;*/
+  /*background:*/
+          /*url('../img/team/1.jpg') bottom right 15% no-repeat #46B6AC;*/
+/*}*/
+
+.page_background{
+  background-color: black !important;
 }
