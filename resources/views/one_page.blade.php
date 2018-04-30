@@ -136,16 +136,40 @@
             </div>
 
             <!-- Modal body -->
-            <div class="modal-body align-items-center">
-                <a href="/login/vk">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/VK.com-logo.svg/192px-VK.com-logo.svg.png"
-                         height="100px"/>
-                </a>
+            <div align="center" class="modal-body align-items-center">
+                <div>
+                    Выберите одну из соц. сетей для входа:
+                </div>
+                <div class="log_via_soc_div">
+                    <a href="/login/vk" class="a_without_decoration log_via_soc_a">
+                        <div id="vk_login_div">
+                            <span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/VK.com-logo.svg/192px-VK.com-logo.svg.png"
+                                     height="54px"/>
+                            </span>
+                                <span>
+                                Вход через Вконтакте
+                            </span>
+                        </div>
 
-                <a href="/login/ok">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Ok_new_logo.png"
-                         height="100px"/>
-                </a>
+                    </a>
+                </div>
+
+                <div class="log_via_soc_div">
+                    <a href="/login/ok" class="a_without_decoration log_via_soc_a">
+                        <div id="ok_login_div">
+                        <span>
+                            <img src="https://png.icons8.com/color/1600/odnoklassniki.png"
+                                 height="54px"/>
+                        </span>
+                            <span>
+                            Вход через Одноклассники
+                        </span>
+                        </div>
+
+                    </a>
+                </div>
+
 
 
                 {{--<div class="modal-body">--}}

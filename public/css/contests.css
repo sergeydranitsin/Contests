@@ -88,3 +88,29 @@ header.page_background .intro-text {
 .page_background{
   background-color: black !important;
 }
+#vk_login_div{
+  background-color: #5082b9;
+}
+#ok_login_div{
+  background-color: #fe9700;
+}
+#ok_login_div:hover,#vk_login_div:hover{
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+.a_without_decoration{
+  text-decoration: none;
+}
+.a_without_decoration:hover{
+  text-decoration: none;
+}
+.a_without_decoration:visited{
+  text-decoration: none;
+}
+.log_via_soc_a,.log_via_soc_a:hover,.log_via_soc_a:visited{
+  color: white;
+
+}
+.log_via_soc_div{
+  width: 75%;
+  margin-top: 3vh;
+}
