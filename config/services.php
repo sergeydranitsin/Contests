@@ -38,7 +38,7 @@ return [
     'vkontakte' => [
         'client_id' => '6463721',
         'client_secret' => 'AKkjcXFy5LgFIsIEENDs',
-        'redirect' => 'http://localhost/login/vk/callback',
+        'redirect' => env('APP_URL') . '/login/vk/callback',
 //        'client_id' => env('VKONTAKTE_KEY'),
 //        'client_secret' => env('VKONTAKTE_SECRET'),
 //        'redirect' => env('VKONTAKTE_REDIRECT_URI'),
@@ -48,7 +48,7 @@ return [
         'client_id' => '1266105344',
         'client_public' => 'CBANDIHMEBABABABA',
         'client_secret' => '4DE10C04C011F68D0D303A80',
-        'redirect' => 'http://localhost/login/ok/callback',
+        'redirect' => env('APP_URL') . '/login/ok/callback',
 //        'client_id' => env('ODNOKLASSNIKI_ID'),
 //        'client_secret' => env('ODNOKLASSNIKI_SECRET'),
 //        'client_public' => env('ODNOKLASSNIKI_PUBLIC'),
