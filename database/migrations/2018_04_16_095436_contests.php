@@ -16,6 +16,7 @@ class Contests extends Migration
         Schema::create('contests', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->string('name');
+            $table->text('description');
             $table->string('category');
             $table->timestamps();
         });

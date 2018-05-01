@@ -15,7 +15,9 @@ class Images extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id_image')->unique();
-            $table->integer('id_work')->unsigned();
+            $table->integer('id_creator')->unsigned();
+            $table->integer('id_work')->unsigned()->nullable();
+            $table->string('path');
             $table->timestamps();
         });
     }
