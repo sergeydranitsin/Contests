@@ -16,7 +16,7 @@ class Votes extends Migration
         Schema::create("votes", function (Blueprint $table){
             $table->increments('id');
             $table->integer('id_user')->unsigned();
-            $table->integer('id_work')->unsignet();
+            $table->integer('id_work')->unsigned();
             $table->integer('vote');
         });
     }
