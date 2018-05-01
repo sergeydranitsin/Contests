@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ForeignImages extends Migration
+class ForeignVotes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,8 @@ class ForeignImages extends Migration
      */
     public function up()
     {
-        Schema::table('images', function (Blueprint $table){
+        Schema::table('votes', function (Blueprint $table){
+            $table->foreign('id_user')->references('id')->on('users');
             $table->foreign('id_work')->references('id')->on('works');
         });
     }
@@ -25,7 +26,8 @@ class ForeignImages extends Migration
      */
     public function down()
     {
-        Schema::table('images', function (Blueprint $table){
+        Schema::table('votes', function (Blueprint $table){
+            $table->dropForeign(['id_user']);
             $table->dropForeign(['id_work']);
         });
     }

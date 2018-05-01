@@ -26,6 +26,10 @@ class ForeignWorks extends Migration
      */
     public function down()
     {
-        //
+
+        Schema::table('works', function (Blueprint $table){
+            $table->dropForeign(['id_creator']);
+            $table->dropForeign(['id_contest']);
+        });
     }
 }
