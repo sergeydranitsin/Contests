@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\Controller;
@@ -25,8 +26,12 @@ class LoginVKController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallback(Request $request)
     {
+        if ($request->query('error') == 'access_denied') {
+            return response("<h1>Вы отменили вход!</h1><meta http-equiv='refresh' content='1; url=/'>");
+        }
+
         $user = Socialite::driver('vkontakte')->user();
 
         $id = 'vk_' . $user->id;
