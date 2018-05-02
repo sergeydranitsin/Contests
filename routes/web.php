@@ -172,7 +172,7 @@ Route::group(['prefix' => 'api'], function () {
         if (Auth::check()) {
             $user = Auth::user();
 
-            $imgs = Image::where('id_creator', $user->id)->all();
+            $imgs = Image::where('id_creator', $user->id)->whereNull('id_work')->get();
             return json_encode(array(
                 'ok' => true,
                 'images' => $imgs
