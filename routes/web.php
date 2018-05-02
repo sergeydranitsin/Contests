@@ -86,6 +86,7 @@ Route::group(['prefix' => 'api'], function () {
         return Contest::paginate($request->query('per_page', '10'));
     });
 
+
     Route::get("/contest_works/{id?}", function (Request $request, $id = null) {
         if (!$id)
             return response('Forbidden', 403);
@@ -117,19 +118,19 @@ Route::group(['prefix' => 'api'], function () {
     });
 
     Route::post("/work", function (Request $request) {
-        return response('Not implemented', '500');
         if (Auth::check()) {
             $user = Auth::user();
-            if ($request->has(['name', 'description', 'images'])) {
+            if ($request->has(['name', 'description', 'id_contest'])) {
                 $work = new Work;
                 $work->name = $request->input('name');
                 $work->description = $request->input('description');
+                $work->id_contest = $request->input('id_contest');
+                $work->id_creator = $user->id;
                 $work->save();
                 $id_work = $work->id;
 
-                $images = $request->images;
-                foreach ($images as $image_id) {
-                    $img = Image::find($image_id);
+                $images = Image::where('id_creator', $user->id)->whereNull('id_work')->get();
+                foreach ($images as $img) {
                     $img->id_work = $id_work;
                     $img->save();
                 }
@@ -166,6 +167,20 @@ Route::group(['prefix' => 'api'], function () {
 
         return $key;
     }
+
+    Route::get("/images", function (Request $request) {
+        if (Auth::check()) {
+            $user = Auth::user();
+
+            $imgs = Image::where('id_creator', $user->id)->all();
+            return json_encode(array(
+                'ok' => true,
+                'images' => $imgs
+            ));
+        } else {
+            return response('Forbidden', 403);
+        }
+    });
 
     Route::post("/image", function (Request $request) {
         if (Auth::check()) {
@@ -204,6 +219,27 @@ Route::group(['prefix' => 'api'], function () {
                 ));
             } else {
                 return response("Wrong file type! ($type)", 400);
+            }
+        } else {
+            return response('Forbidden', 403);
+        }
+    });
+
+    Route::delete("/image/{id?}", function (Request $request, $id = null) {
+        if (Auth::check() && $id) {
+            $user = Auth::user();
+            $img = Image::where('id_creator', $user->id)->find($id);
+
+            if ($img) {
+                $path = str_replace('/storage', 'public', $img->path);
+                Storage::delete($path);
+                $img->delete();
+                return json_encode(array('ok' => true));
+            } else {
+                return json_encode(array(
+                    'ok' => false,
+                    'error' => 'wrong id'
+                ));
             }
         } else {
             return response('Forbidden', 403);
