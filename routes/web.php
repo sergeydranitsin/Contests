@@ -23,6 +23,10 @@ Route::get('/', function () {
     return view('one_page');
 });
 
+Route::get('/here_you_dont_find_any_interesting', function () {
+    return view('adding_new_contests');
+})->name("adding_new_contests");
+
 //Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 
@@ -92,7 +96,6 @@ Route::group(['prefix' => 'api'], function () {
             return response('Forbidden', 403);
         return Work::where('id_contest', $id)->paginate($request->query('per_page', '10'));
     });
-
 
     Route::post("/contest", function (Request $request) {
         if (Auth::check() && Auth::user()->moderator) {
