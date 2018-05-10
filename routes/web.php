@@ -19,6 +19,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
+Route::get('/file', function () {
+    return view('file_upload');
+});
+
 Route::get('/', function () {
     return view('one_page');
 });
@@ -118,6 +122,9 @@ Route::group(['prefix' => 'api'], function () {
         }
     });
 
+    //endregion
+
+    //region works
     Route::post("/work", function (Request $request) {
         if (Auth::check()) {
             $user = Auth::user();
@@ -151,7 +158,6 @@ Route::group(['prefix' => 'api'], function () {
         }
     });
 
-    //endregion
 
     Route::get("/work/{id}", function (Request $request, $id) {
         return response(Work::find($id));
@@ -168,6 +174,10 @@ Route::group(['prefix' => 'api'], function () {
 
         return $key;
     }
+
+    //endregion
+
+    //region images
 
     Route::get("/images", function (Request $request) {
         if (Auth::check()) {
@@ -196,7 +206,7 @@ Route::group(['prefix' => 'api'], function () {
                 ));
             }
 
-            $content = $request->getContent();
+            $content = file_get_contents($request->file->path());
             $finfo = new finfo(FILEINFO_MIME_TYPE);
             $type = $finfo->buffer($content);
 
@@ -229,7 +239,7 @@ Route::group(['prefix' => 'api'], function () {
     Route::delete("/image/{id?}", function (Request $request, $id = null) {
         if (Auth::check() && $id) {
             $user = Auth::user();
-            $img = Image::where('id_creator', $user->id)->find($id);
+            $img = Image::where('id_creator', $user->id)->whereNull('id_work')->find($id);
 
             if ($img) {
                 $path = str_replace('/storage', 'public', $img->path);
@@ -246,6 +256,8 @@ Route::group(['prefix' => 'api'], function () {
             return response('Forbidden', 403);
         }
     });
+
+    //endregion
 });
 
 // endregion
