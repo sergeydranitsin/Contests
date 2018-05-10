@@ -71,7 +71,7 @@ $(document).ready(function(){
                     'description': cont_description
                 },
                 success: function(data) {
-                    console.log(data)
+                    console.log(data['first_name'])
                 }
             });
         }
