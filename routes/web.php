@@ -42,7 +42,6 @@ Route::get('gallery_work', function () {
     return view('gallery_work');
 })->name("gallery_work");
 
-
 // region AUTH
 
 //Route::get('/login', function () {
@@ -75,9 +74,9 @@ Route::group(['prefix' => 'api'], function () {
     Route::get("/user/{id?}", function (Request $request, $id = null) {
         if (Auth::check()) {
             if (!$id) {
-                return json_encode(Auth::user());
+                return response(Auth::user());
             } else {
-                return json_encode(User::find($id));
+                return response(User::find($id));
             }
         } else {
             return response('Unauthenticated', 401);
@@ -89,7 +88,6 @@ Route::group(['prefix' => 'api'], function () {
     Route::get("/contests", function (Request $request) {
         return Contest::paginate($request->query('per_page', '10'));
     });
-
 
     Route::get("/contest_works/{id?}", function (Request $request, $id = null) {
         if (!$id)
@@ -105,12 +103,12 @@ Route::group(['prefix' => 'api'], function () {
                 $contest->description = $request->input('description');
                 $contest->category = $request->input('category');
                 $contest->save();
-                return json_encode(array(
+                return response(array(
                     'ok' => true,
                     'id' => $contest->id
                 ));
             } else {
-                return json_encode(array(
+                return response(array(
                     'ok' => false,
                     'error' => 'missing fields'
                 ));
@@ -138,12 +136,12 @@ Route::group(['prefix' => 'api'], function () {
                     $img->save();
                 }
 
-                return json_encode(array(
+                return response(array(
                     'ok' => true,
                     'id_work' => $id_work
                 ));
             } else {
-                return json_encode(array(
+                return response(array(
                     'ok' => false,
                     'error' => 'missing fields'
                 ));
@@ -156,7 +154,7 @@ Route::group(['prefix' => 'api'], function () {
     //endregion
 
     Route::get("/work/{id}", function (Request $request, $id) {
-        return json_encode(Work::find($id));
+        return response(Work::find($id));
     });
 
     function random_string($length)
@@ -176,7 +174,7 @@ Route::group(['prefix' => 'api'], function () {
             $user = Auth::user();
 
             $imgs = Image::where('id_creator', $user->id)->whereNull('id_work')->get();
-            return json_encode(array(
+            return response(array(
                 'ok' => true,
                 'images' => $imgs
             ));
@@ -192,7 +190,7 @@ Route::group(['prefix' => 'api'], function () {
             $user_id = $user->id;
             $count = Image::where('id_creator', $user_id)->count();
             if ($count >= 10) {
-                return json_encode(array(
+                return response(array(
                     'ok' => false,
                     'error' => 'You have uploaded too many files (limit is 10).'
                 ));
@@ -216,7 +214,7 @@ Route::group(['prefix' => 'api'], function () {
                 $img->save();
 //                $id = $img->id;
 
-                return json_encode(array(
+                return response(array(
                     'ok' => true,
                     'image' => $img
                 ));
@@ -237,9 +235,9 @@ Route::group(['prefix' => 'api'], function () {
                 $path = str_replace('/storage', 'public', $img->path);
                 Storage::delete($path);
                 $img->delete();
-                return json_encode(array('ok' => true));
+                return response(array('ok' => true));
             } else {
-                return json_encode(array(
+                return response(array(
                     'ok' => false,
                     'error' => 'wrong id'
                 ));

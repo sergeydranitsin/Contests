@@ -3,10 +3,39 @@ $(document).ready(function(){
     $.ajax({
         url: '/api/contests',
         success: function(data) {
-            console.log(data)
+            //console.log(data)
+            var new_html = ''
+            for(var i=0; i<data['data'].length; i++){
+                var obj = data['data'][i];
+                var cat = obj['category'];
+                var name_con = obj['name'];
+                var create_date = obj['created_at'];
+                var descr = obj['description'];
+                var id_con = obj['id'];
+                //console.log(id_con);
+                new_html+='<div class="row">\n' +
+                    '                <div class="col-md-2"></div>\n' +
+                    '                <div class="col-md-8">\n' +
+                    '                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">\n' +
+                    '                        <div class="mdl-card__title">\n' +
+                    '                            <h2 class="mdl-card__title-text">'+name_con+'</h2>\n' +
+                    '                            <div class="mdl-card__supporting-text">'+descr+'</div>\n' +
+                    '                            <div class="mdl-card__actions mdl-card--border">\n' +
+                    '                            </div>\n' +
+                    '                            <div class="mdl-card__menu">\n' +
+                    '                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect btn_look">\n' +
+                    '                                    <i class="material-icons open_concurs" id="'+id_con+'">Войти</i>\n' +
+                    '                                </button>\n' +
+                    '                            </div>\n' +
+                    '                        </div>\n' +
+                    '                    </div>\n' +
+                    '                </div>\n' +
+                    '                <div class="col-md-2"></div>\n' +
+                    '            </div>'
+            }
+            $('#div_for_contests_print').html(new_html)
         }
     });
-        
     function search_for_clear_inputs(arr) {
         var response = 'ok';
         for(var i=0; i<arr.length; i++){
@@ -48,5 +77,11 @@ $(document).ready(function(){
         }
     })
 
+    $.ajax({
+        url: '/api/user/',
+        success: function (data) {
+            console.log(data)
+        }
+    })
 
 })
