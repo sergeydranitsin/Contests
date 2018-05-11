@@ -309,9 +309,28 @@ Route::group(['prefix' => 'api'], function () {
         } else {
             return response('Unauthenticated', 401);
         }
-    });
+    })->where('param', '(null|0|1)');
 
-    //endregion
+    Route::patch("/moderator/work/{id}/verify/{param}", function (Request $request, $id, $param) { //$param in [0, 1]
+        if (Auth::check()) {
+            if (Auth::user()->moderator) {
+                $work = Work::find($id);
+                if ($work) {
+                    $work->is_verified = $param;
+                    $work->save();
+                    return response(array('ok' => 'true'));
+                } else
+                    return response(array('ok' => false, 'error' => 'work not found'));
+
+            } else {
+                return response('Forbidden', 403);
+            }
+        } else {
+            return response('Unauthenticated', 401);
+        }
+    })->where('param', '[01]');
+
+//endregion
 });
 
 // endregion
