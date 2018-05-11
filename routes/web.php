@@ -19,9 +19,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
+Route::get('/file', function () {
+    return view('file_upload');
+});
+
 Route::get('/', function () {
     return view('one_page');
 });
+
+Route::get('/here_you_dont_find_any_interesting', function () {
+    return view('adding_new_contests');
+})->name("adding_new_contests");
 
 //Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
@@ -192,7 +200,6 @@ Route::group(['prefix' => 'api'], function () {
     })->where('id', '[0-9]+');
     */
 
-    //endregion
 
     //region images
     function random_string($length)
@@ -206,6 +213,10 @@ Route::group(['prefix' => 'api'], function () {
 
         return $key;
     }
+
+    //endregion
+
+    //region images
 
     Route::get("/images", function (Request $request) {
         if (Auth::check()) {
