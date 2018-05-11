@@ -14,6 +14,7 @@
 use App\Contest;
 use App\Image;
 use App\User;
+use App\Vote;
 use App\Work;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -342,6 +343,29 @@ Route::group(['prefix' => 'api'], function () {
     })->where('param', '[01]');
 
 //endregion
+
+    //region votes
+    Route::post("/work/{id}/vote/{vote}", function (Request $request, $id, $vote) {
+        if (Auth::check()) {
+            $user = Auth::user();
+
+            $check = !Vote::where('id_user', $user->id)->where('id_work', $id)->first();
+            if ($check) {
+                $v = new Vote();
+                $v->id_user = $user->id;
+                $v->id_work = $id;
+                $v->vote = $vote;
+                $v->save(); //todo check
+                return response(array('ok' => 'true'));
+            } else {
+                return response(array('ok' => false, 'error' => 'already voted'));
+            }
+        } else {
+            return response('Unauthenticated', 401);
+        }
+    })->where('param', '[01]');
+
+    //endregion
 });
 
 // endregion
