@@ -71,7 +71,7 @@ $(document).ready(function(){
                     'description': cont_description
                 },
                 success: function(data) {
-                    console.log(data['first_name'])
+                    console.log(data)
                 }
             });
         }
@@ -80,7 +80,17 @@ $(document).ready(function(){
     $.ajax({
         url: '/api/user/',
         success: function (data) {
-            console.log(data)
+            var fName = data['first_name'];
+            var tName = data['middle_name'];
+            var sName = data['second_name'];
+            var email = data['email'];
+            var name = data['name'];
+
+            $('#field_for_fName_private_cab').html(fName);
+            $('#field_for_sName_private_cab').html(sName);
+            $('#field_for_tName_private_cab').html(tName);
+            $('#field_for_email_private_cab').html(email);
+            $('#field_for_nick_private_cab').html(name);
         }
     })
 

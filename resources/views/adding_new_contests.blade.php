@@ -48,11 +48,47 @@
 
 <body>
     <!--'name', 'category', 'description'-->
+    <br/>
+    <div class="row">
+        <div align="center" class="col-md-8"><b>Поля, кнопка и ТЕКСТОВОЕ ПОЛЕ ОШИБКИ для добавления нового конкурса</b></div>
+    </div>
     <input id="sl_name_of_contest" placeholder="Название конкурса"/>
     <input id="sl_category_of_contest" placeholder="Категория"/>
     <textarea id="sl_description_of_contest"></textarea>
     <button id="sl_send_info_about_new_contest">Отправить</button>
     <p id="errors_p_in_adding_contests_form"></p>
+
+    <br/><br/><br/>
+
+    <div class="row">
+        <div align="center" class="col-md-8"><b>Вывод информации в личном кабинете</b></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">Имя:</div>
+        <div class="col-md-3" id="field_for_fName_private_cab"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">Фамилия:</div>
+        <div class="col-md-3" id="field_for_sName_private_cab"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">Отчество:</div>
+        <div class="col-md-3" id="field_for_tName_private_cab"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">Email:</div>
+        <div class="col-md-3" id="field_for_email_private_cab"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">Nick name:</div>
+        <div class="col-md-3" id="field_for_nick_private_cab"></div>
+    </div>
+
 </body>
 
 </html>
