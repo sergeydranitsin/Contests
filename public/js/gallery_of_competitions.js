@@ -94,4 +94,24 @@ $(document).ready(function(){
         }
     })
 
+    function open_concurs_by_id(){
+        var hidden_id = parseInt($("#sl_hidden_input_for_redirect_to_comp_page").val());
+        window.location.href = 'gallery_work?work_id='+hidden_id;
+    }
+
+    $(document).on('click', '.open_concurs', function () {
+        var concurs_id = parseInt($(this).attr('id'))
+        $("#sl_hidden_input_for_redirect_to_comp_page").val(concurs_id)
+        //console.log(concurs_id)
+
+        $.ajax({
+            url: '/api/contest_works/1',
+            type: 'GET',
+            success: function(data) {
+                console.log('ok')
+            }
+        })
+
+        open_concurs_by_id()
+    })
 })
