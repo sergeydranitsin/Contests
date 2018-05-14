@@ -130,4 +130,16 @@ $(document).ready(function(){
 
         open_concurs_by_id()
     })
+    console.log('dfghjk')
+    $(window).scroll(function(){
+        var scroll = $(window).scrollTop()
+        //console.log(scroll)
+        if(scroll>724){
+            //console.log('dfghjkl')
+            $('.mainNavigation').css('background-color', 'rgb(64, 64, 64)')
+        }
+        else{
+            $('.mainNavigation').css('background-color', 'rgba(0,0,0,0)')
+        }
+    });
 })

@@ -143,3 +143,23 @@ header.page_background .intro-text {
 .filter_ul_item{
   text-decoration: none !important; /* Отменяем подчеркивание у ссылки */
 }
+.mainNavigation{
+  background-color: rgba(0,0,0,0);
+}
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 15px !important;
+    padding-bottom: 10px !important;
+
+  }
+}
+footer span.copyright_one{
+  color: white;
+  font-size: 90%;
+  line-height: 40px;
+  text-transform: none;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+footer{
+  padding: 15px 0 !important;
+}
