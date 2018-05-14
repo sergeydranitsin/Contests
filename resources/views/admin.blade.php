@@ -12,8 +12,6 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/gallery_of_competitions.js"></script>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -35,6 +33,7 @@
     <!-- Contact form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
+    <script src="js/gallery_of_competitions.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
@@ -64,19 +63,24 @@
         </form>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
+
+
+
+
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">Галерея конкурсов
-                        <i class="fa fa-undo fa-2x" title="Страница Галерея конкурсов"></i>
+                    <a class="nav-link" style="cursor: pointer" href="#" name="closed_ul" id="open_hidden_ul">Фильтрация работ
+                        <i class="fa fa-filter fa-2x" title="Фильтрация работ"></i>
                     </a>
+                    <ul class="our_hidden_ul" id="our_hidden_ul_id">
+                        <li class="filter_ul"><a class="filter_ul_item" href="#">Принятые работы</a></li>
+                        <li class="filter_ul"><a class="filter_ul_item" href="#">Непринятые работы</a></li>
+                        <li class="filter_ul"><a class="filter_ul_item" href="#">Ожидают проверки</a></li>
+                    </ul>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">Личный кабинет
-                        <i class="fa fa-user fa-2x" title="Войти в личный кабинет"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer" data-toggle="modal" data-target="#myModal_add_work">Добавить работу
-                        <i class="fa fa-plus-circle fa-2x" title="Добавить работу"></i>
+                    <a class="nav-link" style="cursor: pointer" data-toggle="modal" data-target="#myModal_add_contests">Добавить конкурс
+                        <i class="fa fa-plus-circle fa-2x" title="Добавить конкурс"></i>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -101,95 +105,92 @@
                             {{--<h3 class="section-subheading text-muted">конкурсных работ</h3>--}}
                         {{--</div>--}}
                     </div>
-                    <div id = 'all_works_concurs'>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6 portfolio-item">
-                                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content">
-                                            <i class="fa fa-plus fa-3x"></i>
-                                        </div>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
                                     </div>
-                                    <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
-                                </a>
-                                <div class="portfolio-caption">
-                                    <h4>Название работы 1</h4>
-                                    <p class="text-muted">Illustration</p>
                                 </div>
+                                <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Название работы 1</h4>
+                                <p class="text-muted">Illustration</p>
                             </div>
-                            <div class="col-md-4 col-sm-6 portfolio-item">
-                                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content">
-                                            <i class="fa fa-plus fa-3x"></i>
-                                        </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
                                     </div>
-                                    <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
-                                </a>
-                                <div class="portfolio-caption">
-                                    <h4>Название работы 2</h4>
-                                    <p class="text-muted">Graphic Design</p>
                                 </div>
+                                <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Название работы 2</h4>
+                                <p class="text-muted">Graphic Design</p>
                             </div>
-                            <div class="col-md-4 col-sm-6 portfolio-item">
-                                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content">
-                                            <i class="fa fa-plus fa-3x"></i>
-                                        </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
                                     </div>
-                                    <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
-                                </a>
-                                <div class="portfolio-caption">
-                                    <h4>Название работы 3</h4>
-                                    <p class="text-muted">Identity</p>
                                 </div>
+                                <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Название работы 3</h4>
+                                <p class="text-muted">Identity</p>
                             </div>
-                            <div class="col-md-4 col-sm-6 portfolio-item">
-                                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content">
-                                            <i class="fa fa-plus fa-3x"></i>
-                                        </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
                                     </div>
-                                    <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
-                                </a>
-                                <div class="portfolio-caption">
-                                    <h4>Название работы 4</h4>
-                                    <p class="text-muted">Branding</p>
                                 </div>
+                                <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Название работы 4</h4>
+                                <p class="text-muted">Branding</p>
                             </div>
-                            <div class="col-md-4 col-sm-6 portfolio-item">
-                                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content">
-                                            <i class="fa fa-plus fa-3x"></i>
-                                        </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
                                     </div>
-                                    <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
-                                </a>
-                                <div class="portfolio-caption">
-                                    <h4>Название работы 5</h4>
-                                    <p class="text-muted">Website Design</p>
                                 </div>
+                                <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Название работы 5</h4>
+                                <p class="text-muted">Website Design</p>
                             </div>
-                            <div class="col-md-4 col-sm-6 portfolio-item">
-                                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content">
-                                            <i class="fa fa-plus fa-3x"></i>
-                                        </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
                                     </div>
-                                    <img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
-                                </a>
-                                <div class="portfolio-caption">
-                                    <h4>Название работы 6</h4>
-                                    <p class="text-muted">Photography</p>
                                 </div>
+                                <img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>Название работы 6</h4>
+                                <p class="text-muted">Photography</p>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
 
@@ -432,41 +433,27 @@
     </div>
 </div>
 <!-- The Modal add work -->
-<div class="modal fade" id="myModal_add_work">
+<div class="modal fade" id="myModal_add_contests">
     <div class="modal-dialog">
         <div class="modal-content">
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Добавление работы</h4>
+                <h4 class="modal-title">Добавление конкурса</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
-                <form id="form_add_work" >
-                    <input type="text" id="name_work" class="form-control form_register" placeholder="Название работы...">
-                    <textarea type="text" id="work_description" class="form-control form_register" placeholder="Описание работы..."></textarea>
-                    <label>Категория:</label>
-                    <select id="id_category" class="form-control form_register">
-                        <option value="1">Мягкая игрушка</option>
-                        <option value="2">Рисунок</option>
-                        <option value="3">Оригами</option>
-                    </select>
-                    <label>Конкурс:</label>
-                    <select id="id_competition" class="form-control form_register">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                    <input type="text" name="lastname" class="form-control form_register" placeholder="Фамилия автора...">
-                    <input type="text" name="name" class="form-control form_register" placeholder="Имя автора...">
-                    <p class="error_messages" id="error_at_adding_new_work"></p>
-                    <p class="good_messages" id="get_good_mes_at_adding_new_work"></p>
-                    <input type="file" name="file" multiple  accept="image/*" >
-                    {{--<input accept="file_extension|audio/*|video/*|image/*|media_type">--}}
+                <form id="form_add_contests" >
+                    <input id="sl_name_of_contest" class="form-control form_register" placeholder="Название конкурса..."/>
+                    <input id="sl_category_of_contest" class="form-control form_register" placeholder="Категория..."/>
+                    <label>Описание конкурса:</label>
+                    <textarea id="sl_description_of_contest" class="form-control form_register"></textarea>
 
-                    <button type="button" id="btn_add_work" class="btn btn-primary btn_save" >Отправить</button>
+
+                    <button type="button" id="sl_send_info_about_new_contest" class="btn btn-primary btn_save" >Отправить</button>
+                    <p id="errors_p_in_adding_contests_form"></p>
                 </form>
             </div>
 
@@ -478,49 +465,3 @@
 </body>
 
 </html>
-<script>
-
-    var our_location = window.location.href
-    var url = new URL(our_location);
-    var hidden_id = url.searchParams.get("work_id");
-
-   // $('#all_works_concurs').html('GECNJ')
-
-    // console.log(hidden_id)
-    // /contest_works/
-
-    $.ajax({
-        url: '/api/contest_works/'+hidden_id,
-        type: 'GET',
-        success: function(data) {
-            console.log(data)
-        }
-    });
-
-    // adding a new work
-
-    //'name', 'description', 'id_contest'
-
-    $('#btn_add_work').on('click', function(){
-        var work_name = $('#name_work').val()
-        var work_description = $('#work_description').val()
-        console.log(work_name+' '+work_description+' id:'+hidden_id)
-
-        /*
-        $.ajax({
-            url: '/api/work',
-            type: 'POST',
-            data:{
-                'name': ,
-                'description': ,
-                'id_contest': hidden_id
-            }
-            success: function(data) {
-                console.log(data)
-            }
-        });*/
-    })
-
-
-
-</script>
