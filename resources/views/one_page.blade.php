@@ -136,7 +136,7 @@
             </div>
 
             <!-- Modal body -->
-            <div align="center" class="modal-body align-items-center">
+            <div align="center" class="modal-body align-items-center" style="margin-bottom: 5%;" >
                 <div>
                     Выберите одну из соц. сетей для входа:
                 </div>

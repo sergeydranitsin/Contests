@@ -42,6 +42,9 @@ Route::get('gallery_work', function () {
     return view('gallery_work');
 })->name("gallery_work");
 
+Route::get('admin', function () {
+    return view('admin');
+})->name("admin");
 
 // region AUTH
 

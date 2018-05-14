@@ -114,3 +114,23 @@ header.page_background .intro-text {
   width: 75%;
   margin-top: 3vh;
 }
+.our_hidden_ul{
+  position: absolute;
+  background-color: white;
+  opacity: 0;
+}
+.filter_ul {
+  list-style-type: none; /* Убираем маркеры */
+  margin-top: 3%;
+}
+.our_hidden_ul{
+  padding: 1.4rem;
+  border-bottom: 1px solid #e9ecef;
+  border-top-left-radius: .3rem;
+  border-top-right-radius: .3rem;
+  /*margin-left: 1%;*/
+  box-shadow: 0 0 10px rgba(0,0,0,0.8) /* Параметры тени */
+}
+.filter_ul_item{
+  text-decoration: none !important; /* Отменяем подчеркивание у ссылки */
+}

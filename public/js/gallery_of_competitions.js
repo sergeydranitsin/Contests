@@ -48,5 +48,21 @@ $(document).ready(function(){
         }
     })
 
+    $('#open_hidden_ul').on('click', function () {
+        var name = $(this).attr('name')
+        if(name==='closed_ul'){
+            $(this).attr("name","opened_ul")
+            $('#our_hidden_ul_id').css('opacity', '1');
+        }
+        else{
+            $(this).attr("name","closed_ul")
+            $('#our_hidden_ul_id').css('opacity', '0');
+        }
+    })
+    $('.filter_ul_item').on('click', function () {
+        $('#open_hidden_ul').attr("name","closed_ul")
+        $('#our_hidden_ul_id').css('opacity', '0');
+    })
+
 
 })
