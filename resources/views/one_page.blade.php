@@ -23,7 +23,7 @@
     <link href="css/contests.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/agency.min.css" rel="stylesheet">
+    <link href="css/agency.css" rel="stylesheet">
 
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -329,7 +329,7 @@
 
 
 <!-- Footer -->
-<footer style="background-color: rgb(64,64,64)">
+<footer style="background-color: rgb(26,26,26)">
     <div class="container">
         <div class="row">
             <div class="col-md-4">

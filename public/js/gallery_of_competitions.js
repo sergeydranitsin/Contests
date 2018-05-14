@@ -134,9 +134,9 @@ $(document).ready(function(){
     $(window).scroll(function(){
         var scroll = $(window).scrollTop()
         //console.log(scroll)
-        if(scroll>724){
+        if(scroll>500){
             //console.log('dfghjkl')
-            $('.mainNavigation').css('background-color', 'rgb(64, 64, 64)')
+            $('.mainNavigation').css('background-color', 'rgb(26, 26, 26)')
         }
         else{
             $('.mainNavigation').css('background-color', 'rgba(0,0,0,0)')
