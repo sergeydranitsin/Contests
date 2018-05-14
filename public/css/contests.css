@@ -114,3 +114,12 @@ header.page_background .intro-text {
   width: 75%;
   margin-top: 3vh;
 }
+
+.error_messages{
+  text-align: center;
+  color: red;
+}
+.good_messages{
+  text-align: center;
+  color: limegreen;
+}

@@ -71,7 +71,7 @@ $(document).ready(function(){
                     'description': cont_description
                 },
                 success: function(data) {
-                    console.log(data['first_name'])
+                    console.log(data)
                 }
             });
         }
@@ -80,8 +80,38 @@ $(document).ready(function(){
     $.ajax({
         url: '/api/user/',
         success: function (data) {
-            console.log(data)
+            var fName = data['first_name'];
+            var tName = data['middle_name'];
+            var sName = data['second_name'];
+            var email = data['email'];
+            var name = data['name'];
+
+            $('#field_for_fName_private_cab').html(fName);
+            $('#field_for_sName_private_cab').html(sName);
+            $('#field_for_tName_private_cab').html(tName);
+            $('#field_for_email_private_cab').html(email);
+            $('#field_for_nick_private_cab').html(name);
         }
     })
 
+    function open_concurs_by_id(){
+        var hidden_id = parseInt($("#sl_hidden_input_for_redirect_to_comp_page").val());
+        window.location.href = 'gallery_work?work_id='+hidden_id;
+    }
+
+    $(document).on('click', '.open_concurs', function () {
+        var concurs_id = parseInt($(this).attr('id'))
+        $("#sl_hidden_input_for_redirect_to_comp_page").val(concurs_id)
+        //console.log(concurs_id)
+
+        $.ajax({
+            url: '/api/contest_works/1',
+            type: 'GET',
+            success: function(data) {
+                console.log('ok')
+            }
+        })
+
+        open_concurs_by_id()
+    })
 })

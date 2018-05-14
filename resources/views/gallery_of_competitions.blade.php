@@ -90,8 +90,9 @@
 
 <header class="page_background">
     <div class="container">
+        <input type="hidden" id="sl_hidden_input_for_redirect_to_comp_page" value="">
         <div class="intro-text" id="div_for_contests_print">
-
+            <!--
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
@@ -141,6 +142,7 @@
                 </div>
                 <div class="col-md-2"></div>
             </div>
+            -->
 
         </div>
 
