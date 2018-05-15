@@ -134,7 +134,24 @@ Route::group(['prefix' => 'api'], function () {
 
     //region works
     Route::get("/work/{id}", function (Request $request, $id) {
-        return response(Work::find($id));
+        $work = Work::find($id);
+        if ($work) {
+            $work['images'] = Image::where('id_work', $id)->get();
+            return response($work);
+        } else {
+            return (array(
+                'error' => 'work not found'
+            ));
+        }
+    })->where('id', '[0-9]+');
+
+    Route::get("/works/random/{count?}", function (Request $request, $count = 6) {
+        $works = Work::inRandomOrder()->take($count)->get();
+        foreach ($works as &$work) {
+//            $work['images'] = $work->images();
+            $work['images'] = Image::where('id_work', $work->id)->get();
+        }
+        return $works;
     })->where('id', '[0-9]+');
 
     Route::post("/work", function (Request $request) {
