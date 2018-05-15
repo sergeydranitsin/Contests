@@ -163,3 +163,13 @@ footer span.copyright_one{
 footer{
   padding: 15px 0 !important;
 }
+.icon_ok{
+  margin-right: 5%;
+  color: green;
+  cursor: pointer;
+}
+.icon_no{
+  margin-left: 5%;
+  color: red;
+  cursor: pointer;
+}

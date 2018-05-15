@@ -64,9 +64,6 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
 
-
-
-
                 <li class="nav-item">
                     <a class="nav-link" style="cursor: pointer" href="#" name="closed_ul" id="open_hidden_ul">Фильтрация работ
                         <i class="fa fa-filter fa-2x" title="Фильтрация работ"></i>
@@ -117,7 +114,7 @@
                             </a>
                             <div class="portfolio-caption">
                                 <h4>Название работы 1</h4>
-                                <p class="text-muted">Illustration</p>
+                                <p class="text-muted">Автор</p>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 portfolio-item">
@@ -131,7 +128,7 @@
                             </a>
                             <div class="portfolio-caption">
                                 <h4>Название работы 2</h4>
-                                <p class="text-muted">Graphic Design</p>
+                                <p class="text-muted">Автор</p>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 portfolio-item">
@@ -145,7 +142,7 @@
                             </a>
                             <div class="portfolio-caption">
                                 <h4>Название работы 3</h4>
-                                <p class="text-muted">Identity</p>
+                                <p class="text-muted">Автор</p>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 portfolio-item">
@@ -159,7 +156,7 @@
                             </a>
                             <div class="portfolio-caption">
                                 <h4>Название работы 4</h4>
-                                <p class="text-muted">Branding</p>
+                                <p class="text-muted">Автор</p>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 portfolio-item">
@@ -173,7 +170,7 @@
                             </a>
                             <div class="portfolio-caption">
                                 <h4>Название работы 5</h4>
-                                <p class="text-muted">Website Design</p>
+                                <p class="text-muted">Автор</p>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 portfolio-item">
@@ -187,7 +184,7 @@
                             </a>
                             <div class="portfolio-caption">
                                 <h4>Название работы 6</h4>
-                                <p class="text-muted">Photography</p>
+                                <p class="text-muted">Автор</p>
                             </div>
                         </div>
                     </div>
@@ -255,6 +252,7 @@
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
+                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i class="fa fa-times-circle fa-4x icon_no"></i></li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
@@ -288,6 +286,7 @@
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
+                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i class="fa fa-times-circle fa-4x icon_no"></i></li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
@@ -321,6 +320,7 @@
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
+                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i class="fa fa-times-circle fa-4x icon_no"></i></li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
@@ -354,6 +354,7 @@
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
+                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i class="fa fa-times-circle fa-4x icon_no"></i></li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
@@ -387,6 +388,7 @@
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
+                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i class="fa fa-times-circle fa-4x icon_no"></i></li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
@@ -420,6 +422,7 @@
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
+                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i class="fa fa-times-circle fa-4x icon_no"></i></li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
