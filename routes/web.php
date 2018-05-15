@@ -51,6 +51,10 @@ Route::get('admin', function () {
     return view('admin');
 })->name("admin");
 
+Route::get('cabinet_edit', function () {
+    return view('cabinet_edit');
+})->name("cabinet_edit");
+
 // region AUTH
 
 //Route::get('/login', function () {
