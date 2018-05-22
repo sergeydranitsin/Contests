@@ -94,7 +94,8 @@ Route::group(['prefix' => 'api'], function () {
                 $user = Auth::user();
                 $works = Work::where('id_creator', $user->id)->get();
                 foreach ($works as &$work) {
-                    $work['images'] = Image::where('id_work', $work->id)->get();
+                    $work['images'] = $work->images;
+//                    $work['images'] = Image::where('id_work', $work->id)->get();
                 }
                 $user['works'] = $works;
                 return response($user);
@@ -127,11 +128,13 @@ Route::group(['prefix' => 'api'], function () {
     Route::get("/contest/{id?}", function (Request $request, $id = null) {
         if (!$id)
             return response('Forbidden', 403);
-        $works = Work::where('id_contest', $id)
+        $works =
+            Work::where('id_contest', $id)
             ->where('is_verified', '=', '1')
             ->paginate($request->query('per_page', '10'));
         foreach ($works as &$work) {
-            $work['images'] = Image::where('id_work', $work->id)->get();
+//            $work['images'] = Image::where('id_work', $work->id)->get();
+            $work['images'] = $work->images;
         }
         return $works;
     });
@@ -165,7 +168,8 @@ Route::group(['prefix' => 'api'], function () {
     Route::get("/work/{id}", function (Request $request, $id) {
         $work = Work::find($id);
         if ($work) {
-            $work['images'] = Image::where('id_work', $id)->get();
+            $work['images'] = $work->images;
+//            $work['images'] = Image::where('id_work', $id)->get();
             return response($work);
         } else {
             return (array(
@@ -177,8 +181,7 @@ Route::group(['prefix' => 'api'], function () {
     Route::get("/works/random/{count?}", function (Request $request, $count = 6) {
         $works = Work::inRandomOrder()->take($count)->get();
         foreach ($works as &$work) {
-//            $work['images'] = $work->images();
-            $work['images'] = Image::where('id_work', $work->id)->get();
+            $work['images'] = $work->images;
         }
         return $works;
     })->where('id', '[0-9]+');
