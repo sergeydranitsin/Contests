@@ -109,15 +109,30 @@ Route::group(['prefix' => 'api'], function () {
     //region contests
 
     Route::get("/contests", function (Request $request) {
-        return Contest::paginate($request->query('per_page', '10'));
+        $contests = Contest::paginate($request->query('per_page', '10'));
+        foreach ($contests as &$contest) {
+            $contest['image'] = null;
+            $works = Work::where('id_contest', $contest->id)->inRandomOrder()->get();
+            foreach ($works as $work) {
+                $image = Image::where('id_work', $work->id)->inRandomOrder()->first();
+                if ($image) {
+                    $contest['image'] = $image;
+                    break;
+                }
+            }
+        }
+        return $contests;
     });
 
-    Route::get("/contest/{id?}", function (Request $request, $id = null) {//TODO change in ajax contest_works to contest
+    Route::get("/contest/{id?}", function (Request $request, $id = null) {
         if (!$id)
             return response('Forbidden', 403);
         $works = Work::where('id_contest', $id)
             ->where('is_verified', '=', '1')
             ->paginate($request->query('per_page', '10'));
+        foreach ($works as &$work) {
+            $work['images'] = Image::where('id_work', $work->id)->get();
+        }
         return $works;
     });
 
