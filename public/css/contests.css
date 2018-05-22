@@ -123,6 +123,20 @@ header.page_background .intro-text {
   text-align: center;
   color: limegreen;
 }
+
+footer{
+  padding: 15px 0 !important;
+}
+.icon_ok{
+  margin-right: 5%;
+  color: green;
+  cursor: pointer;
+}
+.icon_no{
+  margin-left: 5%;
+  color: red;
+  cursor: pointer;
+}
 .our_hidden_ul{
   position: absolute;
   background-color: white;
@@ -159,17 +173,4 @@ footer span.copyright_one{
   line-height: 40px;
   text-transform: none;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-footer{
-  padding: 15px 0 !important;
-}
-.icon_ok{
-  margin-right: 5%;
-  color: green;
-  cursor: pointer;
-}
-.icon_no{
-  margin-left: 5%;
-  color: red;
-  cursor: pointer;
 }
