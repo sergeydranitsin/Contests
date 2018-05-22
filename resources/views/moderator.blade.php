@@ -17,7 +17,8 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     <link href="css/contests.css" rel="stylesheet" type="text/css">
 
@@ -65,7 +66,8 @@
             <ul class="navbar-nav text-uppercase ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer" href="#" name="closed_ul" id="open_hidden_ul">Фильтрация работ
+                    <a class="nav-link" style="cursor: pointer" href="#" name="closed_ul" id="open_hidden_ul">Фильтрация
+                        работ
                         <i class="fa fa-filter fa-2x" title="Фильтрация работ"></i>
                     </a>
                     <ul class="our_hidden_ul" id="our_hidden_ul_id">
@@ -76,7 +78,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer" data-toggle="modal" data-target="#myModal_add_contests">Добавить конкурс
+                    <a class="nav-link" style="cursor: pointer" data-toggle="modal" data-target="#myModal_add_contests">Добавить
+                        конкурс
                         <i class="fa fa-plus-circle fa-2x" title="Добавить конкурс"></i>
                     </a>
                 </li>
@@ -94,103 +97,102 @@
 </nav>
 
 
-            <section class="page_background" id="portfolio">
-                <div class="container">
-                    <div class="row">
-                        {{--<div class="col-lg-12 text-center">--}}
-                            {{--<h2 class="section-heading text-uppercase">Галерея</h2>--}}
-                            {{--<h3 class="section-subheading text-muted">конкурсных работ</h3>--}}
-                        {{--</div>--}}
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6 portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Название работы 1</h4>
-                                <p class="text-muted">Автор</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Название работы 2</h4>
-                                <p class="text-muted">Автор</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Название работы 3</h4>
-                                <p class="text-muted">Автор</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Название работы 4</h4>
-                                <p class="text-muted">Автор</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Название работы 5</h4>
-                                <p class="text-muted">Автор</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 portfolio-item">
-                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
-                            </a>
-                            <div class="portfolio-caption">
-                                <h4>Название работы 6</h4>
-                                <p class="text-muted">Автор</p>
-                            </div>
+<section class="page_background" id="portfolio">
+    <div class="container">
+        <div class="row">
+            {{--<div class="col-lg-12 text-center">--}}
+            {{--<h2 class="section-heading text-uppercase">Галерея</h2>--}}
+            {{--<h3 class="section-subheading text-muted">конкурсных работ</h3>--}}
+            {{--</div>--}}
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
                         </div>
                     </div>
+                    <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Название работы 1</h4>
+                    <p class="text-muted">Автор</p>
                 </div>
-            </section>
-
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Название работы 2</h4>
+                    <p class="text-muted">Автор</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Название работы 3</h4>
+                    <p class="text-muted">Автор</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Название работы 4</h4>
+                    <p class="text-muted">Автор</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Название работы 5</h4>
+                    <p class="text-muted">Автор</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Название работы 6</h4>
+                    <p class="text-muted">Автор</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <footer>
@@ -252,11 +254,13 @@
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
-                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i class="fa fa-times-circle fa-4x icon_no"></i></li>
+                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i
+                                            class="fa fa-times-circle fa-4x icon_no"></i></li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
-                                Закрыть работу</button>
+                                Закрыть работу
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -286,11 +290,13 @@
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
-                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i class="fa fa-times-circle fa-4x icon_no"></i></li>
+                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i
+                                            class="fa fa-times-circle fa-4x icon_no"></i></li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
-                                Закрыть работу</button>
+                                Закрыть работу
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -320,11 +326,13 @@
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
-                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i class="fa fa-times-circle fa-4x icon_no"></i></li>
+                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i
+                                            class="fa fa-times-circle fa-4x icon_no"></i></li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
-                                Закрыть работу</button>
+                                Закрыть работу
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -354,11 +362,13 @@
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
-                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i class="fa fa-times-circle fa-4x icon_no"></i></li>
+                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i
+                                            class="fa fa-times-circle fa-4x icon_no"></i></li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
-                                Закрыть работу</button>
+                                Закрыть работу
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -388,11 +398,13 @@
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
-                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i class="fa fa-times-circle fa-4x icon_no"></i></li>
+                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i
+                                            class="fa fa-times-circle fa-4x icon_no"></i></li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
-                                Закрыть работу</button>
+                                Закрыть работу
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -422,11 +434,13 @@
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
-                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i class="fa fa-times-circle fa-4x icon_no"></i></li>
+                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i
+                                            class="fa fa-times-circle fa-4x icon_no"></i></li>
                             </ul>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
-                                Закрыть работу</button>
+                                Закрыть работу
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -447,14 +461,17 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-                <form id="form_add_contests" >
-                    <input id="sl_name_of_contest" class="form-control form_register" placeholder="Название конкурса..."/>
+                <form id="form_add_contests">
+                    <input id="sl_name_of_contest" class="form-control form_register"
+                           placeholder="Название конкурса..."/>
                     <input id="sl_category_of_contest" class="form-control form_register" placeholder="Категория..."/>
                     <label>Описание конкурса:</label>
                     <textarea id="sl_description_of_contest" class="form-control form_register"></textarea>
 
 
-                    <button type="button" id="sl_send_info_about_new_contest" class="btn btn-primary btn_save" >Отправить</button>
+                    <button type="button" id="sl_send_info_about_new_contest" class="btn btn-primary btn_save">
+                        Отправить
+                    </button>
                     <p id="errors_p_in_adding_contests_form"></p>
                 </form>
             </div>

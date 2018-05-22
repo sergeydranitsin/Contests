@@ -30,10 +30,10 @@ class User extends Authenticatable
     ];
 
     public function works(){
-        return $this->belongsTo('App/Work', 'id_creator', 'id');
+        return $this->belongsTo('App\Work', 'id_creator', 'id');
     }
 
     public function votes(){
-        return $this->belongsTo('App/Vote', 'id_user','id');
+        return $this->belongsTo('App\Vote', 'id_user', 'id');
     }
 }

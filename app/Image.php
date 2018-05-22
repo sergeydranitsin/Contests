@@ -12,6 +12,6 @@ class Image extends Model
         'id', 'id_work', 'id_creator', 'id_path', 'created_at', 'updated_at'
     ];
     public function works(){
-        return $this->belongsTo('App/Work', 'id_contests', 'id');
+        return $this->belongsTo('App\Work', 'id_contests', 'id');
     }
 }

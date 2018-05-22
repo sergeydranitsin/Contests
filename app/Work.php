@@ -14,7 +14,7 @@ class Work extends Model
 
     public function users()
     {
-        return $this->belongsTo('App/User', 'id', 'id_creator');
+        return $this->belongsTo('App\User', 'id', 'id_creator');
     }
 
     public function images()
@@ -24,6 +24,6 @@ class Work extends Model
 
     public function contests()
     {
-        return $this->belongsTo('App/Contest', 'id', 'id_contest');
+        return $this->belongsTo('App\Contest', 'id', 'id_contest');
     }
 }

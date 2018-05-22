@@ -12,6 +12,6 @@ class Vote extends Model
     public $fillable = ['id', 'id_user', 'id_work', 'vote'];
 
     public function users(){
-        return $this->belongsTo('App/User', 'id', 'id_user');
+        return $this->belongsTo('App\User', 'id', 'id_user');
     }
 }

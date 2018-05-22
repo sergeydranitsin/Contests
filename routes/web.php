@@ -47,13 +47,17 @@ Route::get('gallery_work', function () {
     return view('gallery_work');
 })->name("gallery_work");
 
-Route::get('admin', function () {
-    return view('admin');
-})->name("admin");
+Route::get('moderator', function () {
+    if (Auth::check() && Auth::user()->moderator) {
+        return view('moderator');
+    } else {
+        return redirect('/');
+    }
+});
 
-Route::get('cabinet_edit', function () {
-    return view('cabinet_edit');
-})->name("cabinet_edit");
+Route::get('cabinet', function () {
+    return view('cabinet');
+});
 
 // region AUTH
 
@@ -87,7 +91,13 @@ Route::group(['prefix' => 'api'], function () {
     Route::get("/user/{id?}", function (Request $request, $id = null) {
         if (Auth::check()) {
             if (!$id) {
-                return response(Auth::user());
+                $user = Auth::user();
+                $works = Work::where('id_creator', $user->id)->get();
+                foreach ($works as &$work) {
+                    $work['images'] = Image::where('id_work', $work->id)->get();
+                }
+                $user['works'] = $works;
+                return response($user);
             } else {
                 return response(User::find($id));
             }

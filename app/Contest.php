@@ -12,6 +12,6 @@ class Contest extends Model
         'id', 'name', 'description', 'category', 'created_at', 'updated_at'
     ];
     public function works(){
-        return $this->hasMany('App/Work','id_contest','id');
+        return $this->hasMany('App\Work', 'id_contest', 'id');
     }
 }
