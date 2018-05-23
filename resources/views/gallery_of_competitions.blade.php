@@ -72,7 +72,7 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">Личный кабинет
+                    <a class="nav-link" href="cabinet" style="cursor: pointer">Личный кабинет
                         <i class="fa fa-user fa-2x" title="Войти в личный кабинет"></i>
                     </a>
                 </li>

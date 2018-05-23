@@ -199,10 +199,10 @@ Route::group(['prefix' => 'api'], function () {
 
             $user_id = $user->id;
             $count = Image::where('id_creator', $user_id)->count();
-            if ($count >= 10) {
+            if ($count >= 9) {
                 return response(array(
                     'ok' => false,
-                    'error' => 'You have uploaded too many files (limit is 10).'
+                    'error' => 'You have uploaded too many files (limit is 9).'
                 ));
             }
 
