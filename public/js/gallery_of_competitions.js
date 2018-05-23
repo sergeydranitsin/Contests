@@ -143,4 +143,17 @@ $(document).ready(function(){
             $('.mainNavigation').css('background-color', 'rgba(0,0,0,0)')
         }
     });
+
+    $(window).scroll(function(){
+        var scroll = $(window).scrollTop()
+        console.log(scroll)
+        if(scroll>110){
+            //console.log('dfghjkl')
+            $('.mainNav').css('background-color', 'rgb(0, 0, 0)')
+        }
+        else{
+            $('.mainNav').css('background-color', 'rgba(0,0,0,0)')
+        }
+    });
+
 })

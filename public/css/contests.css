@@ -174,3 +174,7 @@ footer span.copyright_one{
   text-transform: none;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+.a_cont{
+  font-size: 100% !important;
+  text-transform: uppercase!important;
+}
