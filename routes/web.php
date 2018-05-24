@@ -46,6 +46,10 @@ Route::get('gallery_work', function () {
     return view('gallery_work');
 })->name("gallery_work");
 
+Route::get('moderator', function () {
+    return view('moderator');
+});
+
 // region AUTH
 
 //Route::get('/login', function () {
@@ -158,7 +162,6 @@ Route::group(['prefix' => 'api'], function () {
         }
     });
 
-
     Route::get("/work/{id}", function (Request $request, $id) {
         return response(Work::find($id));
     });
@@ -198,7 +201,7 @@ Route::group(['prefix' => 'api'], function () {
             $user = Auth::user();
 
             $user_id = $user->id;
-            $count = Image::where('id_creator', $user_id)->count();
+            $count = Image::where('id_creator', $user_id)->whereNull('id_work')->count();
             if ($count >= 9) {
                 return response(array(
                     'ok' => false,

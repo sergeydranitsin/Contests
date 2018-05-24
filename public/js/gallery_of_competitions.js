@@ -104,6 +104,7 @@ $(document).ready(function () {
         var concurs_id = parseInt($(this).attr('id'))
         $("#sl_hidden_input_for_redirect_to_comp_page").val(concurs_id)
         //console.log(concurs_id)
+        open_concurs_by_id()
     });
 
     $(document).on('click', '#open_hidden_ul', function () {
@@ -213,5 +214,9 @@ $(document).ready(function () {
                 }
             });
         }
+    })
+    $('#open_modal_for_adding_work').on('click', function() {
+        $('#error_at_adding_new_work').html('')
+        $('#get_good_mes_at_adding_new_work').html('')
     })
 })

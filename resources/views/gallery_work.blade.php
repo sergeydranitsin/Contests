@@ -635,7 +635,7 @@
             success: function (data) {
                 var insp = data['ok']
                 if(insp===false){
-                    $('#limit_for_photos').html('Вы достигли придела загружаемых фотографий. Удалите одно из ранее загруженных изображений чтобы добавить новое')
+                    $('#limit_for_photos').html('Вы достигли предела загружаемых фотографий. Удалите одно из ранее загруженных изображений чтобы добавить новое')
                         .css('margin-top', '1.5vh')
                         .css('color', 'red')
                         .css('text-align', 'center')
