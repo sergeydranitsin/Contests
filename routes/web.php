@@ -130,8 +130,8 @@ Route::group(['prefix' => 'api'], function () {
             return response('Forbidden', 403);
         $works =
             Work::where('id_contest', $id)
-            ->where('is_verified', '=', '1')
-            ->paginate($request->query('per_page', '10'));
+                ->where('is_verified', '=', '1')
+                ->paginate($request->query('per_page', '10'));
         foreach ($works as &$work) {
 //            $work['images'] = Image::where('id_work', $work->id)->get();
             $work['images'] = $work->images;
@@ -252,8 +252,21 @@ Route::group(['prefix' => 'api'], function () {
             return response('Forbidden', 403);
         }
     })->where('id', '[0-9]+');
+                return response(array(
+                    'ok' => true,
+                    'id_work' => $id_work
+                ));
+            } else {
+                return response(array(
+                    'ok' => false,
+                    'error' => 'missing fields'
+                ));
+            }
+        } else {
+            return response('Forbidden', 403);
+        }
+    })->where('id', '[0-9]+');
     */
-
 
     //region images
     function random_string($length)
@@ -267,10 +280,6 @@ Route::group(['prefix' => 'api'], function () {
 
         return $key;
     }
-
-    //endregion
-
-    //region images
 
     Route::get("/images", function (Request $request) {
         if (Auth::check()) {
@@ -360,14 +369,18 @@ Route::group(['prefix' => 'api'], function () {
         if (Auth::check()) {
             if (Auth::user()->moderator) {
                 if ($param == 'null') {
-                    return Work::whereNull('is_verified')
+                    $works = Work::whereNull('is_verified')
                         ->orderBy('created_at', 'desc')
                         ->paginate($request->query('per_page', '10'));
                 } else {
-                    return Work::where('is_verified', $param)
+                    $works = Work::where('is_verified', $param)
                         ->orderBy('created_at', 'desc')
                         ->paginate($request->query('per_page', '10'));
                 }
+                foreach ($works as &$work) {
+                    $work['images'] = $work->images;
+                }
+                return $works;
             } else {
                 return response('Forbidden', 403);
             }
