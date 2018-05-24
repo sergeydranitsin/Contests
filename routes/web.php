@@ -291,7 +291,7 @@ Route::group(['prefix' => 'api'], function () {
             $user = Auth::user();
 
             $user_id = $user->id;
-            $count = Image::where('id_creator', $user_id)->count();
+            $count = Image::where('id_creator', $user_id)->whereNull('id_work')->count();
             if ($count >= 9) {
                 return response(array(
                     'ok' => false,
