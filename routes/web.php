@@ -59,6 +59,10 @@ Route::get('cabinet', function () {
     return view('cabinet');
 });
 
+Route::get('cabinet', function () {
+    return view('cabinet');
+})->name("cabinet");
+
 // region AUTH
 
 //Route::get('/login', function () {
