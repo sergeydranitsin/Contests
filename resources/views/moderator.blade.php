@@ -49,7 +49,7 @@
 <body id="page-top">
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top mainNav" id="mainNav">
     <div class="container">
 
         <form class="form-inline my-2 my-lg-0 mr-lg-2">
