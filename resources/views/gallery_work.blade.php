@@ -35,7 +35,6 @@
     <!-- Contact form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
-    <script src="js/gallery_of_competitions.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
@@ -50,7 +49,7 @@
 <body id="page-top">
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top mainNav" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
 
         <form class="form-inline my-2 my-lg-0 mr-lg-2">
@@ -66,17 +65,17 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">Галерея конкурсов
+                    <a class="nav-link" href="gallery_of_competitions" style="cursor: pointer">Галерея конкурсов
                         <i class="fa fa-undo fa-2x" title="Страница Галерея конкурсов"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">Личный кабинет
+                    <a class="nav-link" href="cabinet" style="cursor: pointer">Личный кабинет
                         <i class="fa fa-user fa-2x" title="Войти в личный кабинет"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer" data-toggle="modal" data-target="#myModal_add_work">Добавить работу
+                    <a class="nav-link" style="cursor: pointer" data-toggle="modal" id="open_modal_for_adding_work" data-target="#myModal_add_work">Добавить работу
                         <i class="fa fa-plus-circle fa-2x" title="Добавить работу"></i>
                     </a>
                 </li>
@@ -447,7 +446,7 @@
                 <form id="form_add_work" >
                     <input type="text" id="name_work" class="form-control form_register" placeholder="Название работы...">
                     <textarea type="text" id="work_description" class="form-control form_register" placeholder="Описание работы..."></textarea>
-                    <label>Категория:</label>
+                    <!--<label>Категория:</label>
                     <select id="id_category" class="form-control form_register">
                         <option value="1">Мягкая игрушка</option>
                         <option value="2">Рисунок</option>
@@ -458,16 +457,62 @@
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                    </select>
+                    </select>-->
+                    <!--
                     <input type="text" name="lastname" class="form-control form_register" placeholder="Фамилия автора...">
                     <input type="text" name="name" class="form-control form_register" placeholder="Имя автора...">
+                    -->
                     <p class="error_messages" id="error_at_adding_new_work"></p>
                     <p class="good_messages" id="get_good_mes_at_adding_new_work"></p>
-                    <input type="file" name="file" multiple  accept="image/*" >
+                    <!--<input type="file" name="file" multiple  accept="image/*" >
                     {{--<input accept="file_extension|audio/*|video/*|image/*|media_type">--}}
 
-                    <button type="button" id="btn_add_work" class="btn btn-primary btn_save" >Отправить</button>
+                    <button type="button" id="btn_add_work" class="btn btn-primary btn_save" >Отправить</button>-->
+
                 </form>
+
+                <form id="uploading_form" enctype="multipart/form-data">
+                    <input name="file" type="file"/>
+                    <input type="button" id="uploading" value="Upload"/>
+                </form>
+                <p id="limit_for_photos"></p>
+                <progress class="dis_none"></progress>
+                <div align="center" id="place_for_previews" class="without_p">
+
+                    <!--<div class="spans_div without_p col-lg-3">
+                        <span class="without_p spans_1 red pos-abs">
+                            <img src="http://localhost/storage/images/6nssx2n27ouje1d6iee3mcszjylb2lca.jpg" class="previws_imgs"/>
+                        </span>
+                        <span class="without_p spans_1 pos-abs">
+                            <i class="material-icons delete_icon pointer">
+                                highlight_off
+                            </i>
+                        </span>
+                    </div>-->
+                    <!--<div class="spans_div without_p col-lg-3">
+                        <span class="without_p spans_1 red pos-abs">
+                            <img src="http://localhost/storage/images/6nssx2n27ouje1d6iee3mcszjylb2lca.jpg" class="previws_imgs"/>
+                        </span>
+                        <span class="without_p spans_1 pos-abs">
+                            <i class="material-icons delete_icon pointer">
+                                highlight_off
+                            </i>
+                        </span>
+                    </div>-->
+
+                    <!--<div class="col-lg-3"><img src="http://localhost/storage/images/6nssx2n27ouje1d6iee3mcszjylb2lca.jpg" class="previws_imgs"/></div>-->
+                    <!--<div class="col-lg-3">123</div>
+                    <div class="col-lg-3">123</div>
+                    <div class="col-lg-3">123</div>
+                    <div class="col-lg-3">123</div>
+                    <div class="col-lg-3">123</div>-->
+                </div>
+                <div align="right">
+                    <button id="send_new_work" class="btn mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect btn_look">
+                        Добавить
+                    </button>
+                </div>
+
             </div>
 
 
@@ -482,7 +527,11 @@
 
     var our_location = window.location.href
     var url = new URL(our_location);
-    var hidden_id = url.searchParams.get("work_id");
+    var hidden_id = url.searchParams.get("concurs_id");
+
+    $('#open_modal_for_adding_work').on('click', function(){
+        //console.log(hidden_id)
+    })
 
    // $('#all_works_concurs').html('GECNJ')
 
@@ -490,7 +539,7 @@
     // /contest_works/
 
     $.ajax({
-        url: '/api/contest_works/'+hidden_id,
+        url: '/api/contest/'+hidden_id,
         type: 'GET',
         success: function(data) {
             console.log(data)
@@ -504,8 +553,7 @@
     $('#btn_add_work').on('click', function(){
         var work_name = $('#name_work').val()
         var work_description = $('#work_description').val()
-        console.log(work_name+' '+work_description+' id:'+hidden_id)
-
+        //console.log(work_name+' '+work_description+' id:'+hidden_id)
         /*
         $.ajax({
             url: '/api/work',
@@ -521,6 +569,110 @@
         });*/
     })
 
+    function get_preview_images(){
 
+    }
+
+    $.ajax({
+        url: 'api/images',
+        type: 'GET',
+        success: function (data) {
+            console.log(data)
+            var new_html = ''
+            for(var i=0; i<data['images'].length; i++){
+
+                var obj = data['images'][i]
+                console.log()
+                var id = obj['id']
+                var path = obj['path']
+                //console.log(path)
+                new_html+='<div class="spans_div without_p col-lg-3">\n' +
+                    '                        <span class="without_p spans_1 red pos-abs">\n' +
+                    '                            <img src="'+path+'" class="previws_imgs"/>\n' +
+                    '                        </span>\n' +
+                    '                        <span class="without_p spans_1 pos-abs">\n' +
+                    '                            <i id="'+id+'" class="material-icons delete_icon pointer">\n' +
+                    '                                highlight_off\n' +
+                    '                            </i>\n' +
+                    '                        </span>\n' +
+                    '                    </div>';
+            }
+            $('#place_for_previews').html(new_html)
+        }
+    })
+
+    $('#uploading').on('click', function () {
+
+        $.ajax({
+            // Your server script to process the upload
+            url: 'api/image',
+            type: 'POST',
+            // Form data
+            data: new FormData($('#uploading_form')[0]),
+
+            // Tell jQuery not to process data or worry about content-type
+            // You *must* include these options!
+            cache: false,
+            contentType: false,
+            processData: false,
+
+            // Custom XMLHttpRequest
+            xhr: function () {
+                var myXhr = $.ajaxSettings.xhr();
+                if (myXhr.upload) {
+                    // For handling the progress of the upload
+                    myXhr.upload.addEventListener('progress', function (e) {
+                        if (e.lengthComputable) {
+                            $('progress').attr({
+                                value: e.loaded,
+                                max: e.total
+                            });
+                        }
+                    }, false);
+                }
+                return myXhr;
+            },
+            success: function (data) {
+                var insp = data['ok']
+                if(insp===false){
+                    $('#limit_for_photos').html('Вы достигли придела загружаемых фотографий. Удалите одно из ранее загруженных изображений чтобы добавить новое')
+                        .css('margin-top', '1.5vh')
+                        .css('color', 'red')
+                        .css('text-align', 'center')
+                }
+                else{
+                    $('#limit_for_photos').html('').css('margin-top', '0vh')
+                }
+                $.ajax({
+                    url: 'api/images',
+                    type: 'GET',
+                    success: function (data) {
+                        console.log(data)
+                        var new_html = ''
+                        for(var i=0; i<data['images'].length; i++){
+
+                            var obj = data['images'][i]
+                            console.log()
+                            var id = obj['id']
+                            var path = obj['path']
+                            //console.log(path)
+                            new_html+='<div class="spans_div without_p col-lg-3">\n' +
+                                '                        <span class="without_p spans_1 red pos-abs">\n' +
+                                '                            <img src="'+path+'" class="previws_imgs"/>\n' +
+                                '                        </span>\n' +
+                                '                        <span class="without_p spans_1 pos-abs">\n' +
+                                '                            <i id="'+id+'" class="material-icons delete_icon pointer">\n' +
+                                '                                highlight_off\n' +
+                                '                            </i>\n' +
+                                '                        </span>\n' +
+                                '                    </div>';
+                        }
+                        $('#place_for_previews').html(new_html)
+                    }
+                })
+            }
+
+        });
+    });
 
 </script>

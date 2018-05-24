@@ -66,7 +66,7 @@
             <ul class="navbar-nav text-uppercase ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer" href="#" name="closed_ul" id="open_hidden_ul">Фильтрация
+                    <a class="nav-link" href="#" name="closed_ul" id="open_hidden_ul">Фильтрация
                         работ
                         <i class="fa fa-filter fa-2x" title="Фильтрация работ"></i>
                     </a>
