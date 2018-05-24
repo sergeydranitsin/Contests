@@ -107,8 +107,7 @@ $(document).ready(function () {
         open_concurs_by_id()
     });
 
-    $(document).on('click', '#open_hidden_ul', function () {
-        console.log('hide')
+    $(document).on('click', '#open_hidden_ul',function () {console.log('hide')
         var name = $(this).attr('name')
         if (name === 'closed_ul') {
             $(this).attr("name", "opened_ul")
@@ -145,6 +144,19 @@ $(document).ready(function () {
             $('.mainNavigation').css('background-color', 'rgba(0,0,0,0)')
         }
     });
+
+    $(window).scroll(function(){
+        var scroll = $(window).scrollTop()
+        console.log(scroll)
+        if(scroll>110){
+            //console.log('dfghjkl')
+            $('.mainNav').css('background-color', 'rgb(0, 0, 0)')
+        }
+        else{
+            $('.mainNav').css('background-color', 'rgba(0,0,0,0)')
+        }
+    });
+
     $(document).on('click', '.delete_icon', function () {
         //console.log($(this).attr('id'))
         var img_id = $(this).attr('id')
