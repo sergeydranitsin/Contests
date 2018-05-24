@@ -37,6 +37,7 @@
     <!-- Contact form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
+    <script src="js/gallery_of_competitions.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
@@ -51,7 +52,7 @@
 <body id="page-top">
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top mainNav" id="mainNav">
     <div class="container">
 
 
@@ -91,64 +92,7 @@
 <header class="page_background">
     <div class="container">
         <input type="hidden" id="sl_hidden_input_for_redirect_to_comp_page" value="">
-        <div class="intro-text" id="div_for_contests_print">
-            <!--
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-                        <div class="mdl-card__title">
-                            <h2 class="mdl-card__title-text">Конкурс номер 1</h2>
-                            <div class="mdl-card__supporting-text">
-                                Описание данного конкурса...
-                            </div>
-                            {{--<div class="mdl-card__actions mdl-card--border">--}}
-                            {{--<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">--}}
-                            {{--Get Started--}}
-                            {{--</a>--}}
-                            {{--</div>--}}
-                            <div class="mdl-card__menu">
-                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect btn_look">
-                                    <i class="material-icons">Войти</i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2"></div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-                        <div class="mdl-card__title">
-                            <h2 class="mdl-card__title-text">Конкурс номер 1</h2>
-                            <div class="mdl-card__supporting-text">
-                                Описание данного конкурса...
-                            </div>
-                            {{--<div class="mdl-card__actions mdl-card--border">--}}
-                            {{--<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">--}}
-                            {{--Get Started--}}
-                            {{--</a>--}}
-                            {{--</div>--}}
-                            <div class="mdl-card__menu">
-                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect btn_look">
-                                    <i class="material-icons">Войти</i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2"></div>
-            </div>
-            -->
-
-        </div>
-
-
-
-
+        <div class="intro-text" id="div_for_contests_print"></div>
     </div>
 </header>
 
