@@ -1,196 +1,544 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
 
-    <title>Laravel</title>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Творческие конкурсы</title>
+
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="css/main.css"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/gallery_of_competitions.js"></script>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="css/contests.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.css" rel="stylesheet">
+    <link href="css/cabinet.css" rel="stylesheet">
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+    <script src="js/gallery_of_competitions.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
 </head>
-<body id="top">
-<!-- Header -->
-<header id="header">
-    <div class="inner">
-        <a href="#" class="image avatar"><img src="img/avatar.jpg" alt=""/></a>
-        <h1><strong class="txt_uppercase">Иванов Иван Иванович</strong></h1>
-    </div>
-</header>
 
-<style type="text/css">
-    button {
-        /*margin:5px;*/
-        /*margin-bottom:50px;*/
-        /*margin-left:61%;*/
-        /*margin-top:18px;*/
-        /*!*width:127px;*!*/
-        /*height:40px;*/
-    }
+<body id="page-top">
 
-    .cabinet_pic {
-        margin-left: 0.5%;
-        margin-top: 0.7%;
-    }
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top mainNav" id="mainNav">
+    <div class="container">
 
-    i {
-        margin-top: 9.5px;
-        margin-right: 5px;
-    }
 
-    .btn_save {
-        background-color: #fed136;
-        border-color: #fed136;
-        font-size: 15px !important;
-        color: white !important;
-        font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-weight: 700;
-        text-transform: uppercase !important;
-        margin-left: 61%;
-        margin-top: 18px;
-    }
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" style="cursor: pointer">Галерея конкурсов
+                        <i class="fa fa-undo fa-2x" title="Страница Галерея конкурсов"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="cursor: pointer">Галерея работ
+                        <i class="fa fa-undo fa-2x" title="Войти в личный кабинет"></i>
+                    </a>
+                </li>
 
-    .btn_search {
-        background-color: #fed136;
-        border-color: #fed136;
-        font-size: 15px !important;
-        color: white !important;
-        font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-weight: 700;
-        text-transform: uppercase !important;
-        margin-left: 44%;
-        margin-top: 5px;
-    }
-
-    .txt_uppercase {
-        font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-weight: 700;
-        text-transform: uppercase !important;
-    }
-
-    .txt_label {
-        color: #6c757d !important;
-        font-size: 1rem;
-        font-weight: 400;
-        margin-top: 2%;
-        margin-left: 1%;
-    }
-
-</style>
-
-<!-- Main -->
-<div id="main">
-    <!-- One -->
-    <section id="one">
-        <header class="major">
-            <h2 class="txt_uppercase">Личный кабинет</h2>
-        </header>
-        <div class="container" style="margin-left: -4%;">
-
-        </div>
-    </section>
-
-    <!-- Two -->
-    <hr>
-    <h2 class="txt_uppercase">Работы</h2>
-
-    {{--<h5>Отобразить работы</h5>--}}
-    <div class="container" style="margin-left: -5%;">
-
-    </div>
-
-    <section id="two">
-        <div class="container">
-            <div class="row cabinet_pic">
-                <div class="col-md-6 ">
-                    <article class="6u 12u$(xsmall) work-item">
-                        <a href="img/fulls/01.jpg" class="image fit thumb"><img src="img/thumbs/01.jpg" alt=""/></a>
-                        <h3>Работа 1</h3>
-                        <p style=" color: #6c757d!important;">Описание работы</p>
-                    </article>
-                </div>
-
-                <div class="col-md-6">
-                    <article class="6u$ 12u$(xsmall) work-item">
-                        <a href="img/fulls/02.jpg" class="image fit thumb"><img src="img/thumbs/02.jpg" alt=""/></a>
-                        <h3>Работа 2</h3>
-                        <p style=" color: #6c757d!important;">Описание работы</p>
-                    </article>
-                </div>
-            </div>
-
-            <div class="row cabinet_pic">
-                <div class="col-md-6">
-                    <article class="6u 12u$(xsmall) work-item">
-                        <a href="img/fulls/03.jpg" class="image fit thumb"><img src="img/thumbs/03.jpg" alt=""/></a>
-                        <h3>Работа 3</h3>
-                        <p style=" color: #6c757d!important;">Описание работы</p>
-                    </article>
-                </div>
-
-                <div class="col-md-6">
-                    <article class="6u$ 12u$(xsmall) work-item">
-                        <a href="img/fulls/04.jpg" class="image fit thumb"><img src="img/thumbs/04.jpg" alt=""/></a>
-                        <h3>Работа 4</h3>
-                        <p style=" color: #6c757d!important;">Описание работы</p>
-                    </article>
-                </div>
-
-            </div>
-
-            <div class="row cabinet_pic">
-                <div class="col-md-6">
-                    <article class="6u 12u$(xsmall) work-item">
-                        <a href="img/fulls/05.jpg" class="image fit thumb"><img src="img/thumbs/05.jpg" alt=""/></a>
-                        <h3>Работа 5</h3>
-                        <p style=" color: #6c757d!important;">Описание работы</p>
-                    </article>
-                </div>
-
-                <div class="col-md-6">
-                    <article class="6u$ 12u$(xsmall) work-item">
-                        <a href="img/fulls/06.jpg" class="image fit thumb"><img src="img/thumbs/06.jpg" alt=""/></a>
-                        <h3>Работа 6</h3>
-                        <p style=" color: #6c757d!important;">Описание работы</p>
-                    </article>
-                </div>
-            </div>
+                <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="cursor: pointer">
+                        <i class="fa fa-fw fa-sign-out fa-2x" title="Выйти из профиля"></i></a>
+                </li>
+            </ul>
         </div>
 
-    </section>
-</div>
 
-<!-- Footer -->
-<footer id="footer">
-    <div class="inner">
+    </div>
+</nav>
 
-        <ul class="copyright">
-            <li>Copyright &copy; Contests 2018</li>
-        </ul>
+
+            <section class="page_background" id="portfolio">
+
+                <div class="container">
+                    <ul class="nav nav-tabs">
+                        <li class="nav active"><a data-toggle="tab" href="#works" class="nav-link a_cont" style="cursor: pointer">Работы</a></li>
+                        <li class="nav"><a data-toggle="tab" href="#contests" class="nav-link a_cont" style="cursor: pointer">Конкурсы</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="works" class="tab-pane active in ">
+                            <div class="container" style="margin-top: 5%">
+                                <div class="row">
+                                    {{--<div class="col-lg-12 text-center">--}}
+                                    {{--<h2 class="section-heading text-uppercase">Галерея</h2>--}}
+                                    {{--<h3 class="section-subheading text-muted">конкурсных работ</h3>--}}
+                                    {{--</div>--}}
+                                </div>
+                                <div id = 'all_works_concurs'>
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-6 portfolio-item">
+                                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                                                <div class="portfolio-hover">
+                                                    <div class="portfolio-hover-content">
+                                                        <i class="fa fa-plus fa-3x"></i>
+                                                    </div>
+                                                </div>
+                                                <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+                                            </a>
+                                            <div class="portfolio-caption">
+                                                <h4>Название работы 1</h4>
+                                                <p class="text-muted">Illustration</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 portfolio-item">
+                                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                                                <div class="portfolio-hover">
+                                                    <div class="portfolio-hover-content">
+                                                        <i class="fa fa-plus fa-3x"></i>
+                                                    </div>
+                                                </div>
+                                                <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
+                                            </a>
+                                            <div class="portfolio-caption">
+                                                <h4>Название работы 2</h4>
+                                                <p class="text-muted">Graphic Design</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 portfolio-item">
+                                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                                                <div class="portfolio-hover">
+                                                    <div class="portfolio-hover-content">
+                                                        <i class="fa fa-plus fa-3x"></i>
+                                                    </div>
+                                                </div>
+                                                <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
+                                            </a>
+                                            <div class="portfolio-caption">
+                                                <h4>Название работы 3</h4>
+                                                <p class="text-muted">Identity</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 portfolio-item">
+                                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                                                <div class="portfolio-hover">
+                                                    <div class="portfolio-hover-content">
+                                                        <i class="fa fa-plus fa-3x"></i>
+                                                    </div>
+                                                </div>
+                                                <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
+                                            </a>
+                                            <div class="portfolio-caption">
+                                                <h4>Название работы 4</h4>
+                                                <p class="text-muted">Branding</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 portfolio-item">
+                                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                                                <div class="portfolio-hover">
+                                                    <div class="portfolio-hover-content">
+                                                        <i class="fa fa-plus fa-3x"></i>
+                                                    </div>
+                                                </div>
+                                                <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
+                                            </a>
+                                            <div class="portfolio-caption">
+                                                <h4>Название работы 5</h4>
+                                                <p class="text-muted">Website Design</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-6 portfolio-item">
+                                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+                                                <div class="portfolio-hover">
+                                                    <div class="portfolio-hover-content">
+                                                        <i class="fa fa-plus fa-3x"></i>
+                                                    </div>
+                                                </div>
+                                                <img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
+                                            </a>
+                                            <div class="portfolio-caption">
+                                                <h4>Название работы 6</h4>
+                                                <p class="text-muted">Photography</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="contests" class="tab-pane fade">
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </section>
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="copyright">Copyright &copy; Contests 2018</span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li class="list-inline-item">
+                        <a href="">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            {{--<div class="col-md-4">--}}
+            {{--<ul class="list-inline quicklinks">--}}
+            {{--<li class="list-inline-item">--}}
+            {{--<a href="#">Privacy Policy</a>--}}
+            {{--</li>--}}
+            {{--<li class="list-inline-item">--}}
+            {{--<a href="#">Terms of Use</a>--}}
+            {{--</li>--}}
+            </ul>
+        </div>
     </div>
 </footer>
 
-<!-- Scripts -->
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery.poptrox.min.js"></script>
-<script src="js/skel.min.js"></script>
-<script src="js/util.js"></script>
-<!--[if lte IE 8]>
-<script src="js/ie/respond.min.js"></script><![endif]-->
-<script src="js/main.js"></script>
+<!-- Modal 1 -->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2 class="text-uppercase">Название работы 1</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                            <p>Описание работы номер 1....</p>
+                            <ul class="list-inline">
+                                <li>Дата: Январь 2018</li>
+                                <li>Категория: Доклад</li>
+                            </ul>
+                            <div class="stars">
+                                <span id="star_1" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_2" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_3" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_4" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_5" class="fa fa-star fa-2x our_stars"></span>
+                                {{--<span id="rater5" class="star-rating" style="width: 80px; height: 16px; background-size: 16px;" data-title="1/5" data-rating="undefined">--}}
+                                    {{--<div class="star-value" style="background-size: 16px; width: 0%;"></div>--}}
+                                {{--</span>--}}
+                                <span class="live-rating"></span>
+                            </div>
+
+
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fa fa-times"></i>
+                                Закрыть работу</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2 -->
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2 class="text-uppercase">Название работы 1</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
+                            <p>Описание работы номер 1....</p>
+                            <ul class="list-inline">
+                                <li>Дата: Январь 2018</li>
+                                <li>Категория: Доклад</li>
+                            </ul>
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fa fa-times"></i>
+                                Закрыть работу</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2 class="text-uppercase">Название работы 1</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
+                            <p>Описание работы номер 1....</p>
+                            <ul class="list-inline">
+                                <li>Дата: Январь 2018</li>
+                                <li>Категория: Доклад</li>
+                            </ul>
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fa fa-times"></i>
+                                Закрыть работу</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 4 -->
+<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2 class="text-uppercase">Название работы 1</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
+                            <p>Описание работы номер 1....</p>
+                            <ul class="list-inline">
+                                <li>Дата: Январь 2018</li>
+                                <li>Категория: Доклад</li>
+                            </ul>
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fa fa-times"></i>
+                                Закрыть работу</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 5 -->
+<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2 class="text-uppercase">Название работы 1</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
+                            <p>Описание работы номер 1....</p>
+                            <ul class="list-inline">
+                                <li>Дата: Январь 2018</li>
+                                <li>Категория: Доклад</li>
+                            </ul>
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fa fa-times"></i>
+                                Закрыть работу</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 6 -->
+<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2 class="text-uppercase">Название работы 1</h2>
+                            <p class="item-intro text-muted"></p>
+                            <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
+                            <p>Описание работы номер 1....</p>
+                            <ul class="list-inline">
+                                <li>Дата: Январь 2018</li>
+                                <li>Категория: Доклад</li>
+                            </ul>
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                <i class="fa fa-times"></i>
+                                Закрыть работу</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- The Modal add work -->
+<div class="modal fade" id="myModal_add_work">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Добавление работы</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form id="form_add_work" >
+                    <input type="text" id="name_work" class="form-control form_register" placeholder="Название работы...">
+                    <textarea type="text" id="work_description" class="form-control form_register" placeholder="Описание работы..."></textarea>
+                    <label>Категория:</label>
+                    <select id="id_category" class="form-control form_register">
+                        <option value="1">Мягкая игрушка</option>
+                        <option value="2">Рисунок</option>
+                        <option value="3">Оригами</option>
+                    </select>
+                    <label>Конкурс:</label>
+                    <select id="id_competition" class="form-control form_register">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <input type="text" name="lastname" class="form-control form_register" placeholder="Фамилия автора...">
+                    <input type="text" name="name" class="form-control form_register" placeholder="Имя автора...">
+                    <p class="error_messages" id="error_at_adding_new_work"></p>
+                    <p class="good_messages" id="get_good_mes_at_adding_new_work"></p>
+                    <input type="file" name="file" multiple  accept="image/*" >
+                    {{--<input accept="file_extension|audio/*|video/*|image/*|media_type">--}}
+
+                    <button type="button" id="btn_add_work" class="btn btn-primary btn_save" >Отправить</button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
 </body>
+
 </html>
+<script>
+
+    var our_location = window.location.href
+    var url = new URL(our_location);
+    var hidden_id = url.searchParams.get("work_id");
+
+   // $('#all_works_concurs').html('GECNJ')
+
+    // console.log(hidden_id)
+    // /contest_works/
+
+    $.ajax({
+        url: '/api/contest_works/'+hidden_id,
+        type: 'GET',
+        success: function(data) {
+            console.log(data)
+        }
+    });
+
+    // adding a new work
+
+    //'name', 'description', 'id_contest'
+
+    $('#btn_add_work').on('click', function(){
+        var work_name = $('#name_work').val()
+        var work_description = $('#work_description').val()
+        console.log(work_name+' '+work_description+' id:'+hidden_id)
+
+        /*
+        $.ajax({
+            url: '/api/work',
+            type: 'POST',
+            data:{
+                'name': ,
+                'description': ,
+                'id_contest': hidden_id
+            }
+            success: function(data) {
+                console.log(data)
+            }
+        });*/
+    })
+
+
+
+</script>

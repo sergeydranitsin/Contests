@@ -227,6 +227,69 @@ $(document).ready(function () {
             });
         }
     })
+
+    var clicker = false
+
+    function fill_stars(arr_id) {
+        for(var i=0;i<arr_id.length;i++){
+            //console.log('#star_'+arr_id[i])
+            $('#star_'+arr_id[i]).css('color', '#fed136')
+        }
+    }
+
+    function fill_stars_black(arr_id) {
+        for(var i=0;i<arr_id.length;i++){
+            //console.log('#star_'+arr_id[i])
+            $('#star_'+arr_id[i]).css('color', 'black')
+        }
+    }
+
+    $('.our_stars').mouseenter(function () {
+        //var id=$(this).attr('id')
+        var id=parseInt($(this).attr('id').match(/\d+/))
+        if(id===1){
+            console.log('123')
+            fill_stars([1])
+        }
+        if(id===2){
+            fill_stars([1,2])
+        }
+        if(id===3){
+            fill_stars([1,2,3])
+        }
+        if(id===4){
+            fill_stars([1,2,3,4])
+        }
+        if(id===5){
+            fill_stars([1,2,3,4,5])
+        }
+    })
+    $('.our_stars').mouseleave(function () {
+        if(clicker===false){
+            fill_stars_black([1,2,3,4,5])
+        }
+    })
+    $('.our_stars').on('click', function(){
+        fill_stars_black([1,2,3,4,5])
+        clicker=true
+        var id=parseInt($(this).attr('id').match(/\d+/))
+        if(id===1){
+            console.log('123')
+            fill_stars([1])
+        }
+        if(id===2){
+            fill_stars([1,2])
+        }
+        if(id===3){
+            fill_stars([1,2,3])
+        }
+        if(id===4){
+            fill_stars([1,2,3,4])
+        }
+        if(id===5){
+            fill_stars([1,2,3,4,5])
+        }
+    })
     $('#open_modal_for_adding_work').on('click', function() {
         $('#error_at_adding_new_work').html('')
         $('#get_good_mes_at_adding_new_work').html('')
