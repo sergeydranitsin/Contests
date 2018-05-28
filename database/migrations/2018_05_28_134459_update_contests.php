@@ -10,9 +10,9 @@ class UpdateContests extends Migration
     public function up()
     {
         Schema::table('contests', function (Blueprint $table) {
-           $table->dateTime("qualification");
-           $table->dateTime("vote");
-           $table->dateTime("outcomes");
+            $table->dateTime("qualification")->nullable();
+            $table->dateTime("vote")->nullable();
+            $table->dateTime("outcomes")->nullable();
         });
     }
 
