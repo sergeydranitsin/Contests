@@ -232,3 +232,10 @@ footer span.copyright_one{
   background-color: rgba(128, 128, 128, 0.5);
 
 }
+.for-inline{
+  display: inline-block;
+}
+#div_for_small_images > div{
+  display: inline-block;
+  cursor: pointer;
+}

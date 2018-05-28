@@ -36,6 +36,8 @@
     <script src="js/contact_me.js"></script>
     <script src="js/gallery_of_competitions.js"></script>
 
+    <script src="js/moderator.js"></script>
+
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -71,9 +73,9 @@
                         <i class="fa fa-filter fa-2x" title="Фильтрация работ"></i>
                     </a>
                     <ul class="our_hidden_ul" id="our_hidden_ul_id">
-                        <li class="filter_ul"><a class="filter_ul_item" href="#">Принятые работы</a></li>
-                        <li class="filter_ul"><a class="filter_ul_item" href="#">Непринятые работы</a></li>
-                        <li class="filter_ul"><a class="filter_ul_item" href="#">Ожидают проверки</a></li>
+                        <li class="filter_ul"><a class="filter_ul_item" id="get_good_w" href="#">Принятые работы</a></li>
+                        <li class="filter_ul"><a class="filter_ul_item" id="get_deleted_w" href="#">Непринятые работы</a></li>
+                        <li class="filter_ul"><a class="filter_ul_item" id="get_all_w" href="#">Ожидают проверки</a></li>
                     </ul>
                 </li>
 
@@ -97,7 +99,9 @@
 </nav>
 
 <section class="page_background" id="portfolio">
-    <div class="container">
+    <div class="container" id="moderators_works">
+
+        <!--
         <div class="row">
             {{--<div class="col-lg-12 text-center">--}}
             {{--<h2 class="section-heading text-uppercase">Галерея</h2>--}}
@@ -189,7 +193,7 @@
                     <p class="text-muted">Автор</p>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
 
@@ -236,7 +240,7 @@
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
+            <div class="close-modal sl_close_modal" data-dismiss="modal">
                 <div class="lr">
                     <div class="rl"></div>
                 </div>
@@ -246,17 +250,30 @@
                     <div class="col-lg-8 mx-auto">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2 class="text-uppercase">Название работы 1</h2>
+                            <h2 class="text-uppercase" id="name_of_work_modal"></h2>
                             <p class="item-intro text-muted"></p>
-                            <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
-                            <p>Описание работы номер 1....</p>
+                            <div class="col-md-12" id="big_photo">
+                                <!--<img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">-->
+                            </div>
+                            <div class="col-md-12" id="div_for_small_images">
+                                <!--<div class="col-md-4" class="small_photos">
+                                    <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                                </div>
+                                <div class="col-md-4" class="small_photos">
+                                    <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                                </div>-->
+                            </div>
+
+                            <p id="work_descr_modal"></p>
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
-                                <li style="margin-top: 5%"><i class="fa fa-check-circle fa-4x icon_ok"></i><i
-                                            class="fa fa-times-circle fa-4x icon_no"></i></li>
+                                <li style="margin-top: 5%" id="icons_li">
+                                    <i class="fa fa-check-circle fa-4x icon_ok"></i>
+                                    <i class="fa fa-times-circle fa-4x icon_no"></i>
+                                </li>
                             </ul>
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                            <button class="btn btn-primary sl_close_modal" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
                                 Закрыть работу
                             </button>

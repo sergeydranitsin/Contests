@@ -147,7 +147,7 @@ $(document).ready(function () {
 
     $(window).scroll(function(){
         var scroll = $(window).scrollTop()
-        console.log(scroll)
+        //console.log(scroll)
         if(scroll>110){
             //console.log('dfghjkl')
             $('.mainNav').css('background-color', 'rgb(0, 0, 0)')
@@ -170,7 +170,7 @@ $(document).ready(function () {
                     url: 'api/images',
                     type: 'GET',
                     success: function (data) {
-                        console.log(data)
+                        //console.log(data)
                         var new_html = ''
                         for (var i = 0; i < data['images'].length; i++) {
 
@@ -178,7 +178,7 @@ $(document).ready(function () {
                             console.log()
                             var id = obj['id']
                             var path = obj['path']
-                            //console.log(path)
+                            console.log(path)
                             new_html += '<div class="spans_div without_p col-lg-3">\n' +
                                 '                        <span class="without_p spans_1 red pos-abs">\n' +
                                 '                            <img src="' + path + '" class="previws_imgs"/>\n' +
@@ -231,4 +231,5 @@ $(document).ready(function () {
         $('#error_at_adding_new_work').html('')
         $('#get_good_mes_at_adding_new_work').html('')
     })
+
 })
