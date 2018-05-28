@@ -132,6 +132,8 @@ Route::group(['prefix' => 'api'], function () {
     Route::get("/contest/{id?}", function (Request $request, $id = null) {
         if (!$id)
             return response('Forbidden', 403);
+
+        $user = Auth::user();
         $works =
             Work::where('id_contest', $id)
                 ->where('is_verified', '=', '1')
@@ -139,6 +141,14 @@ Route::group(['prefix' => 'api'], function () {
         foreach ($works as &$work) {
 //            $work['images'] = Image::where('id_work', $work->id)->get();
             $work['images'] = $work->images;
+            $work['rating'] = round(Vote::where('id_work', $id)->avg('vote'), 1);
+            $work['user_vote'] = null;
+            if ($user) {
+                $v = Vote::where('id_user', $user->id)->where('id_work', $work->id)->first(['vote']);
+                if ($v) {
+                    $work['user_vote'] = $v['vote'];
+                }
+            }
         }
         return $works;
     });
@@ -173,6 +183,15 @@ Route::group(['prefix' => 'api'], function () {
         $work = Work::find($id);
         if ($work) {
             $work['images'] = $work->images;
+            $work['rating'] = round(Vote::where('id_work', $id)->avg('vote'), 1);
+            $user = Auth::user();
+            $work['user_vote'] = null;
+            if ($user) {
+                $v = Vote::where('id_user', $user->id)->where('id_work', $id)->first(['vote']);
+                if ($v) {
+                    $work['user_vote'] = $v['vote'];
+                }
+            }
 //            $work['images'] = Image::where('id_work', $id)->get();
             return response($work);
         } else {
@@ -413,30 +432,43 @@ Route::group(['prefix' => 'api'], function () {
         }
     })->where('param', '[01]');
 
-//endregion
+    //endregion
 
     //region votes
     Route::post("/work/{id}/vote/{vote}", function (Request $request, $id, $vote) {
         if (Auth::check()) {
             $user = Auth::user();
 
-            $check = !Vote::where('id_user', $user->id)->where('id_work', $id)->first();
-            if ($check) {
+            $v = Vote::where('id_user', $user->id)->where('id_work', $id)->first();
+            if ($v) {
+                $v->vote = $vote;
+                $v->save();
+                return response(array('ok' => 'vote changed'));
+            } else {
                 $v = new Vote();
                 $v->id_user = $user->id;
                 $v->id_work = $id;
                 $v->vote = $vote;
                 $v->save(); //todo check
                 return response(array('ok' => 'true'));
-            } else {
-                return response(array('ok' => false, 'error' => 'already voted'));
             }
         } else {
             return response('Unauthenticated', 401);
         }
-    })->where('param', '[01]');
+    })->where('vote', '[1-5]');
 
-    //endregion
+    Route::get("/work/{id}/rating", function (Request $request, $id) {
+        if (Auth::check()) {
+            $count = Vote::where('id_work', $id)->count('vote');
+            $rating = round(Vote::where('id_work', $id)->avg('vote'), 1);
+
+            return array('rating' => $rating, 'count' => $count);
+        } else {
+            return response('Unauthenticated', 401);
+        }
+    })->where('id', '[0-9]+');
+
+//endregion
 });
 
 // endregion
