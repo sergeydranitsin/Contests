@@ -94,7 +94,8 @@ Route::group(['prefix' => 'api'], function () {
                 $user = Auth::user();
                 $works = Work::where('id_creator', $user->id)->get();
                 foreach ($works as &$work) {
-                    $work['images'] = Image::where('id_work', $work->id)->get();
+                    $work['images'] = $work->images;
+//                    $work['images'] = Image::where('id_work', $work->id)->get();
                 }
                 $user['works'] = $works;
                 return response($user);
@@ -109,15 +110,32 @@ Route::group(['prefix' => 'api'], function () {
     //region contests
 
     Route::get("/contests", function (Request $request) {
-        return Contest::paginate($request->query('per_page', '10'));
+        $contests = Contest::paginate($request->query('per_page', '10'));
+        foreach ($contests as &$contest) {
+            $contest['image'] = null;
+            $works = Work::where('id_contest', $contest->id)->inRandomOrder()->get();
+            foreach ($works as $work) {
+                $image = Image::where('id_work', $work->id)->inRandomOrder()->first();
+                if ($image) {
+                    $contest['image'] = $image;
+                    break;
+                }
+            }
+        }
+        return $contests;
     });
 
-    Route::get("/contest/{id?}", function (Request $request, $id = null) {//TODO change in ajax contest_works to contest
+    Route::get("/contest/{id?}", function (Request $request, $id = null) {
         if (!$id)
             return response('Forbidden', 403);
-        $works = Work::where('id_contest', $id)
-            ->where('is_verified', '=', '1')
-            ->paginate($request->query('per_page', '10'));
+        $works =
+            Work::where('id_contest', $id)
+                ->where('is_verified', '=', '1')
+                ->paginate($request->query('per_page', '10'));
+        foreach ($works as &$work) {
+//            $work['images'] = Image::where('id_work', $work->id)->get();
+            $work['images'] = $work->images;
+        }
         return $works;
     });
 
@@ -150,7 +168,8 @@ Route::group(['prefix' => 'api'], function () {
     Route::get("/work/{id}", function (Request $request, $id) {
         $work = Work::find($id);
         if ($work) {
-            $work['images'] = Image::where('id_work', $id)->get();
+            $work['images'] = $work->images;
+//            $work['images'] = Image::where('id_work', $id)->get();
             return response($work);
         } else {
             return (array(
@@ -163,7 +182,6 @@ Route::group(['prefix' => 'api'], function () {
         $works = Work::inRandomOrder()->take($count)->get();
         foreach ($works as &$work) {
             $work['images'] = $work->images;
-//            $work['images'] = Image::where('id_work', $work->id)->get();
         }
         return $works;
     })->where('id', '[0-9]+');
@@ -234,8 +252,21 @@ Route::group(['prefix' => 'api'], function () {
             return response('Forbidden', 403);
         }
     })->where('id', '[0-9]+');
+                return response(array(
+                    'ok' => true,
+                    'id_work' => $id_work
+                ));
+            } else {
+                return response(array(
+                    'ok' => false,
+                    'error' => 'missing fields'
+                ));
+            }
+        } else {
+            return response('Forbidden', 403);
+        }
+    })->where('id', '[0-9]+');
     */
-
 
     //region images
     function random_string($length)
@@ -249,10 +280,6 @@ Route::group(['prefix' => 'api'], function () {
 
         return $key;
     }
-
-    //endregion
-
-    //region images
 
     Route::get("/images", function (Request $request) {
         if (Auth::check()) {
@@ -273,11 +300,11 @@ Route::group(['prefix' => 'api'], function () {
             $user = Auth::user();
 
             $user_id = $user->id;
-            $count = Image::where('id_creator', $user_id)->count();
-            if ($count >= 10) {
+            $count = Image::where('id_creator', $user_id)->whereNull('id_work')->count();
+            if ($count >= 9) {
                 return response(array(
                     'ok' => false,
-                    'error' => 'You have uploaded too many files (limit is 10).'
+                    'error' => 'You have uploaded too many files (limit is 9).'
                 ));
             }
 
@@ -342,14 +369,18 @@ Route::group(['prefix' => 'api'], function () {
         if (Auth::check()) {
             if (Auth::user()->moderator) {
                 if ($param == 'null') {
-                    return Work::whereNull('is_verified')
+                    $works = Work::whereNull('is_verified')
                         ->orderBy('created_at', 'desc')
                         ->paginate($request->query('per_page', '10'));
                 } else {
-                    return Work::where('is_verified', $param)
+                    $works = Work::where('is_verified', $param)
                         ->orderBy('created_at', 'desc')
                         ->paginate($request->query('per_page', '10'));
                 }
+                foreach ($works as &$work) {
+                    $work['images'] = $work->images;
+                }
+                return $works;
             } else {
                 return response('Forbidden', 403);
             }

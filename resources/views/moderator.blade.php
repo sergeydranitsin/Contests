@@ -49,7 +49,7 @@
 <body id="page-top">
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top mainNav" id="mainNav">
     <div class="container">
 
         <form class="form-inline my-2 my-lg-0 mr-lg-2">
@@ -66,7 +66,7 @@
             <ul class="navbar-nav text-uppercase ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer" href="#" name="closed_ul" id="open_hidden_ul">Фильтрация
+                    <a class="nav-link" href="#" name="closed_ul" id="open_hidden_ul">Фильтрация
                         работ
                         <i class="fa fa-filter fa-2x" title="Фильтрация работ"></i>
                     </a>
@@ -95,7 +95,6 @@
 
     </div>
 </nav>
-
 
 <section class="page_background" id="portfolio">
     <div class="container">
