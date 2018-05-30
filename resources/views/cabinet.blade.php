@@ -57,12 +57,12 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">Галерея конкурсов
+                    <a class="nav-link" href="gallery_of_competitions" style="cursor: pointer">Галерея конкурсов
                         <i class="fa fa-undo fa-2x" title="Страница Галерея конкурсов"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">Галерея работ
+                    <a class="nav-link" href="gallery_work" style="cursor: pointer">Галерея работ
                         <i class="fa fa-undo fa-2x" title="Войти в личный кабинет"></i>
                     </a>
                 </li>
