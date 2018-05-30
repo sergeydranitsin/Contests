@@ -25,6 +25,8 @@
     <!-- Custom styles for this template -->
     <link href="css/agency.css" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -45,6 +47,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
 
 </head>
 
@@ -101,99 +106,6 @@
 <section class="page_background" id="portfolio">
     <div class="container" id="moderators_works">
 
-        <!--
-        <div class="row">
-            {{--<div class="col-lg-12 text-center">--}}
-            {{--<h2 class="section-heading text-uppercase">Галерея</h2>--}}
-            {{--<h3 class="section-subheading text-muted">конкурсных работ</h3>--}}
-            {{--</div>--}}
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-sm-6 portfolio-item">
-                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Название работы 1</h4>
-                    <p class="text-muted">Автор</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 portfolio-item">
-                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Название работы 2</h4>
-                    <p class="text-muted">Автор</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 portfolio-item">
-                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Название работы 3</h4>
-                    <p class="text-muted">Автор</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 portfolio-item">
-                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Название работы 4</h4>
-                    <p class="text-muted">Автор</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 portfolio-item">
-                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Название работы 5</h4>
-                    <p class="text-muted">Автор</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 portfolio-item">
-                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Название работы 6</h4>
-                    <p class="text-muted">Автор</p>
-                </div>
-            </div>
-        </div>-->
     </div>
 </section>
 
@@ -231,7 +143,7 @@
             {{--<li class="list-inline-item">--}}
             {{--<a href="#">Terms of Use</a>--}}
             {{--</li>--}}
-            </ul>
+            {{--</ul>--}}
         </div>
     </div>
 </footer>
@@ -481,6 +393,14 @@
                     <input id="sl_name_of_contest" class="form-control form_register"
                            placeholder="Название конкурса..."/>
                     <input id="sl_category_of_contest" class="form-control form_register" placeholder="Категория..."/>
+                    <label>Начало подачи работ:</label>
+                    <input type="text" id="daterange" class="form-control search_group" name="daterange1" value="" />
+                    <label>Начало голосования:</label>
+                    <input type="text" id="daterange" class="form-control search_group" name="daterange2" value="" />
+                    <label>Окончание голосования:</label>
+                    <input type="text" id="daterange" class="form-control search_group" name="daterange3" value="" />
+
+
                     <label>Описание конкурса:</label>
                     <textarea id="sl_description_of_contest" class="form-control form_register"></textarea>
 
@@ -496,6 +416,55 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(function() {
+        var arr = {
+            singleDatePicker: true,
+            showDropdowns: true,
+            locale: {
+                format: 'DD-MM-YYYY',
+                separator: " - ",
+                applyLabel: "Принять",
+                cancelLabel: "Закрыть",
+//                        fromLabel: "From",
+//                        toLabel: "To",
+//                        customRangeLabel: "Custom",
+//                        weekLabel: "W",
+                daysOfWeek: [
+                    "Вс",
+                    "Пн",
+                    "Вт",
+                    "Ср",
+                    "Чт",
+                    "Пт",
+                    "Сб"
+                ],
+                monthNames: [
+                    "Январь",
+                    "Февраль",
+                    "Март",
+                    "Апрель",
+                    "Май",
+                    "Июнь",
+                    "Июль",
+                    "Август",
+                    "Сентябрь",
+                    "Октябрь",
+                    "Ноябрь",
+                    "Декабрь"
+                ],
+                firstDay: 1
+            },
+            applyClass:'apply_but'
+        };
+        $('input[name="daterange1"]').daterangepicker(arr);
+        $('input[name="daterange2"]').daterangepicker(arr);
+        $('input[name="daterange3"]').daterangepicker(arr);
+
+    });
+
+</script>
 
 </body>
 
