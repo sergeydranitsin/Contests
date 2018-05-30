@@ -129,6 +129,26 @@ Route::group(['prefix' => 'api'], function () {
         return $contests;
     });
 
+    function get_contest_status($contest)
+    {
+        $q = $contest['qualification'];
+        $q = strtotime(explode(" ", $q)[0]);
+        $v = $contest['vote'];
+        $v = strtotime(explode(" ", $v)[0]);
+        $o = $contest['outcomes'];
+        $o = strtotime(explode(" ", $o)[0]);
+
+        $t = time();
+        if ($t < $q)
+            return "not started";
+        elseif ($q < $t && $t < $v)
+            return "qualification";
+        elseif ($v < $t && $t < $o)
+            return "vote";
+        else
+            return "end";
+    }
+
     Route::get("/contest/{id?}", function (Request $request, $id = null) {
         if (!$id)
             return response('Forbidden', 403);
@@ -150,6 +170,12 @@ Route::group(['prefix' => 'api'], function () {
                 }
             }
         }
+        $contest = Contest::find($id);
+        $status = get_contest_status($contest);
+        $add = collect(["status" => $status]);
+
+        $works = $add->merge($works)->all();
+
         return $works;
     });
 
@@ -184,6 +210,8 @@ Route::group(['prefix' => 'api'], function () {
         if ($work) {
             $work['images'] = $work->images;
             $work['rating'] = round(Vote::where('id_work', $id)->avg('vote'), 1);
+            $contest = Contest::find($id);
+            $work['contest'] = get_contest_status($contest);
             $user = Auth::user();
             $work['user_vote'] = null;
             if ($user) {

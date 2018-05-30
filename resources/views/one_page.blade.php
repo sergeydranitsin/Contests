@@ -67,8 +67,8 @@
 
                 @if (Auth::check())
                     <li class="nav-item">
-                        <span class="nav-link js-scroll-trigger" href="#contact">Привет, {{ Auth::user()->first_name
-                        }}!</span>
+                        <span class="nav-link js-scroll-trigger"
+                              href="#contact">Привет, {{ Auth::user()->first_name }}!</span>
                     </li>
                     <li class="nav-item">
                         <a id="auth" class="btn btn-primary  text-uppercase js-scroll-trigger btn_login" href="/logout">Выход</a>
@@ -129,7 +129,7 @@
             </div>
 
             <!-- Modal body -->
-            <div align="center" class="modal-body align-items-center" style="margin-bottom: 5%;" >
+            <div align="center" class="modal-body align-items-center" style="margin-bottom: 5%;">
                 <div>
                     Выберите одну из соц. сетей для входа:
                 </div>
@@ -140,7 +140,7 @@
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/VK.com-logo.svg/192px-VK.com-logo.svg.png"
                                      height="54px"/>
                             </span>
-                                <span>
+                            <span>
                                 Вход через Вконтакте
                             </span>
                         </div>
@@ -163,14 +163,13 @@
                 </div>
 
 
-
                 {{--<div class="modal-body">--}}
-                    {{--<form id="form_register">--}}
-                        {{--<input type="email" name="email" class="form-control form_register" placeholder="E-mail...">--}}
-                        {{--<input type="password" name="password" class="form-control form_register"--}}
-                               {{--placeholder="Пароль...">--}}
-                        {{--<button type="button" id="auth_btn" class="btn btn-primary btn_save">Войти</button>--}}
-                    {{--</form>--}}
+                {{--<form id="form_register">--}}
+                {{--<input type="email" name="email" class="form-control form_register" placeholder="E-mail...">--}}
+                {{--<input type="password" name="password" class="form-control form_register"--}}
+                {{--placeholder="Пароль...">--}}
+                {{--<button type="button" id="auth_btn" class="btn btn-primary btn_save">Войти</button>--}}
+                {{--</form>--}}
                 {{--</div>--}}
             </div>
 
@@ -325,8 +324,6 @@
 </section>
 
 
-
-
 <!-- Footer -->
 <footer style="background-color: rgb(26,26,26)">
     <div class="container">
@@ -354,16 +351,16 @@
                 </ul>
             </div>
             {{--<div class="col-md-4">--}}
-                {{--<ul class="list-inline quicklinks">--}}
-                    {{--<li class="list-inline-item">--}}
-                        {{--<a href="#">Privacy Policy</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="list-inline-item">--}}
-                        {{--<a href="#">Terms of Use</a>--}}
-                    {{--</li>--}}
-                </ul>
-            </div>
+            {{--<ul class="list-inline quicklinks">--}}
+            {{--<li class="list-inline-item">--}}
+            {{--<a href="#">Privacy Policy</a>--}}
+            {{--</li>--}}
+            {{--<li class="list-inline-item">--}}
+            {{--<a href="#">Terms of Use</a>--}}
+            {{--</li>--}}
+            </ul>
         </div>
+    </div>
 </footer>
 
 <!-- Portfolio Modals -->
