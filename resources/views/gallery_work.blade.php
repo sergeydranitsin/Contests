@@ -88,7 +88,7 @@
                 </li>
             </ul>
         </div>
-
+        <input type="hidden" id="sl_hidden_input_at_opening_work" value="">
 
     </div>
 </nav>
@@ -103,7 +103,7 @@
                         {{--</div>--}}
                     </div>
                     <div id = 'all_works_concurs'>
-                        <div class="row">
+                        <!--<div class="row">
                             <div class="col-md-4 col-sm-6 portfolio-item">
                                 <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
                                     <div class="portfolio-hover">
@@ -188,7 +188,7 @@
                                     <p class="text-muted">Photography</p>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
 
                 </div>
@@ -250,12 +250,36 @@
                             <!-- Project Details Go Here -->
                             <h2 class="text-uppercase">Название работы 1</h2>
                             <p class="item-intro text-muted"></p>
-                            <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                            <div class="col-md-12" id="big_photo">
+                                <!--<img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">-->
+                            </div>
+
+                            <div class="col-md-12" id="div_for_small_images">
+                                <!--<div class="col-md-4" class="small_photos">
+                                    <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                                </div>
+                                <div class="col-md-4" class="small_photos">
+                                    <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                                </div>-->
+                            </div>
                             <p>Описание работы номер 1....</p>
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
                             </ul>
+
+                            <div class="stars">
+                                <span id="star_1" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_2" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_3" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_4" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_5" class="fa fa-star fa-2x our_stars"></span>
+                                {{--<span id="rater5" class="star-rating" style="width: 80px; height: 16px; background-size: 16px;" data-title="1/5" data-rating="undefined">--}}
+                                    {{--<div class="star-value" style="background-size: 16px; width: 0%;"></div>--}}
+                                {{--</span>--}}
+                                <span class="live-rating"></span>
+                            </div>
+
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
                                 Закрыть работу</button>
@@ -283,12 +307,26 @@
                             <!-- Project Details Go Here -->
                             <h2 class="text-uppercase">Название работы 1</h2>
                             <p class="item-intro text-muted"></p>
-                            <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
+
+
                             <p>Описание работы номер 1....</p>
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
                             </ul>
+
+                            <div class="stars">
+                                <span id="star_1" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_2" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_3" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_4" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_5" class="fa fa-star fa-2x our_stars"></span>
+                                {{--<span id="rater5" class="star-rating" style="width: 80px; height: 16px; background-size: 16px;" data-title="1/5" data-rating="undefined">--}}
+                                    {{--<div class="star-value" style="background-size: 16px; width: 0%;"></div>--}}
+                                {{--</span>--}}
+                                <span class="live-rating"></span>
+                            </div>
+
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
                                 Закрыть работу</button>
@@ -322,6 +360,19 @@
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
                             </ul>
+
+                            <div class="stars">
+                                <span id="star_1" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_2" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_3" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_4" class="fa fa-star fa-2x our_stars"></span>
+                                <span id="star_5" class="fa fa-star fa-2x our_stars"></span>
+                                {{--<span id="rater5" class="star-rating" style="width: 80px; height: 16px; background-size: 16px;" data-title="1/5" data-rating="undefined">--}}
+                                    {{--<div class="star-value" style="background-size: 16px; width: 0%;"></div>--}}
+                                {{--</span>--}}
+                                <span class="live-rating"></span>
+                            </div>
+
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
                                 Закрыть работу</button>
@@ -539,14 +590,6 @@
     // console.log(hidden_id)
     // /contest_works/
 
-    $.ajax({
-        url: '/api/contest/'+hidden_id,
-        type: 'GET',
-        success: function(data) {
-            console.log(data)
-        }
-    });
-
     // adding a new work
 
     //'name', 'description', 'id_contest'
@@ -674,6 +717,44 @@
             }
 
         });
+    });
+    function printing_worcks(data){
+        var works = data['data']
+        var new_html = ''
+        for(var i=0; i<works.length; i++){
+            var w = works[i];
+            //console.log(w)
+
+            var work_id = w['id']
+            var work_name = w['name']
+            if(w['images'].length>0){
+                var img = w['images'][0]['path']
+                //console.log(img)
+                new_html+='<div class="for-inline col-md-4 col-sm-6 portfolio-item">\n' +
+                    '                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">\n' +
+                    '                    <div class="portfolio-hover" id="'+work_id+'">\n' +
+                    '                        <div class="portfolio-hover-content">\n' +
+                    '                            <i class="fa fa-plus fa-3x"></i>\n' +
+                    '                        </div>\n' +
+                    '                    </div>\n' +
+                    '                    <img class="img-fluid" src="'+img+'" alt="">\n' +
+                    '                </a>\n' +
+                    '                <div class="portfolio-caption">\n' +
+                    '                    <h4>'+work_name+'</h4>\n' +
+                    '                    <p class="text-muted">Автор</p>\n' +
+                    '                </div>\n' +
+                    '            </div>'
+            }
+        }
+        $('#all_works_concurs').html(new_html)
+    }
+
+    $.ajax({
+        url: '/api/contest/'+hidden_id,
+        type: 'GET',
+        success: function(data) {
+            printing_worcks(data)
+        }
     });
 
 </script>

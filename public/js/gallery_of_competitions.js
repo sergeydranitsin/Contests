@@ -229,6 +229,7 @@ $(document).ready(function () {
     })
 
     var clicker = false
+    var selected_star = 0
 
     function fill_stars(arr_id) {
         for(var i=0;i<arr_id.length;i++){
@@ -248,7 +249,6 @@ $(document).ready(function () {
         //var id=$(this).attr('id')
         var id=parseInt($(this).attr('id').match(/\d+/))
         if(id===1){
-            console.log('123')
             fill_stars([1])
         }
         if(id===2){
@@ -264,17 +264,34 @@ $(document).ready(function () {
             fill_stars([1,2,3,4,5])
         }
     })
+
     $('.our_stars').mouseleave(function () {
         if(clicker===false){
             fill_stars_black([1,2,3,4,5])
         }
+        else{
+            for(var i=selected_star+1;i<6;i++){
+                fill_stars_black([i])
+            }
+        }
     })
+
     $('.our_stars').on('click', function(){
         fill_stars_black([1,2,3,4,5])
         clicker=true
         var id=parseInt($(this).attr('id').match(/\d+/))
+        var hidden_work_id = parseInt($("#sl_hidden_input_at_opening_work").val());
+
+        $.ajax({
+            url: '/api/work/'+hidden_work_id+'/vote/'+id,
+            type: 'POST',
+            success: function (data) {
+                //console.log(data)
+            }
+        });
+
+        selected_star = id
         if(id===1){
-            console.log('123')
             fill_stars([1])
         }
         if(id===2){
@@ -290,9 +307,63 @@ $(document).ready(function () {
             fill_stars([1,2,3,4,5])
         }
     })
+
     $('#open_modal_for_adding_work').on('click', function() {
         $('#error_at_adding_new_work').html('')
         $('#get_good_mes_at_adding_new_work').html('')
+    })
+
+    $(document).on('click', '.portfolio-hover', function() {
+        var id = $(this).attr('id')
+
+
+        $.ajax({
+            url: '/api/work/'+id+'/rating',
+            type: 'GET',
+            success: function (data) {
+                var rating = data['rating']
+                if(rating>0){
+                    for(var i=1;i<rating+1;i++){
+                        fill_stars([i])
+                    }
+                }
+            }
+        });
+
+        $("#sl_hidden_input_at_opening_work").val(id)
+
+        //console.log(id)
+        $.ajax({
+            url: '/api/work/'+id,
+            type: 'GET',
+            success: function (data) {
+                var works = data['data']
+                var new_html = ''
+                //console.log(data)
+                var w = data;
+                var work_id = w['id']
+                var work_name = w['name']
+                var descr = w['description']
+                $('#name_of_work_modal').html(work_name)
+                $('#work_descr_modal').html(descr)
+                if(w['images'].length>0){
+                    var path = w['images'][0]['path']
+                    var main_photo = '<img class="img-fluid d-block mx-auto" src="'+path+'" alt="">'
+                    $('#big_photo').html(main_photo)
+                    var arr = w['images']
+                    var additional_imgs = ''
+                    for(var i=0; i<arr.length; i++){
+                        var path = w['images'][i]['path']
+                        additional_imgs += '<div class="col-md-4" class="small_photos">\n' +
+                            '                                    <img class="img-fluid d-block mx-auto small_photos" src="'+path+'" alt="">\n' +
+                            '                                </div>'
+                        $('#div_for_small_images').html(additional_imgs)
+                    }
+                }
+
+            }
+        })
+
     })
 
 })
