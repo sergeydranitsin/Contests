@@ -67,8 +67,8 @@
 
                 @if (Auth::check())
                     <li class="nav-item">
-                        <span class="nav-link js-scroll-trigger" href="#contact">Привет, {{ Auth::user()->first_name
-                        }}!</span>
+                        <a class="nav-link js-scroll-trigger" href="/cabinet">Привет, {{ Auth::user()->first_name
+                        }}!</a>
                     </li>
                     <li class="nav-item">
                         <a id="auth" class="btn btn-primary  text-uppercase js-scroll-trigger btn_login" href="/logout">Выход</a>
