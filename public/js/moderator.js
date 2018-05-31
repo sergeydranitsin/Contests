@@ -27,6 +27,24 @@ $(document).ready(function () {
                     '                </div>\n' +
                     '            </div>'
             }
+            else{
+                var img = 'img/image_icon.png'
+                //console.log(img)
+                new_html+='<div class="for-inline col-md-4 col-sm-6 portfolio-item">\n' +
+                    '                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">\n' +
+                    '                    <div class="portfolio-hover" id="'+work_id+'">\n' +
+                    '                        <div class="portfolio-hover-content">\n' +
+                    '                            <i class="fa fa-plus fa-3x"></i>\n' +
+                    '                        </div>\n' +
+                    '                    </div>\n' +
+                    '                    <img class="img-fluid" src="'+img+'" alt="">\n' +
+                    '                </a>\n' +
+                    '                <div class="portfolio-caption">\n' +
+                    '                    <h4>'+work_name+'</h4>\n' +
+                    '                    <p class="text-muted">Автор</p>\n' +
+                    '                </div>\n' +
+                    '            </div>'
+            }
         }
         $('#moderators_works').html(new_html)
     }
@@ -92,7 +110,11 @@ $(document).ready(function () {
                         $('#div_for_small_images').html(additional_imgs)
                     }
                 }
-
+                else{
+                    var main_photo = '<img class="img-fluid d-block mx-auto" src="img/image_icon.png" alt="">'
+                    $('#big_photo').html(main_photo)
+                    $('#div_for_small_images').html('')
+                }
             }
         })
     })
