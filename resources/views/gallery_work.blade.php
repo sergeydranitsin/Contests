@@ -82,8 +82,8 @@
                 <li class="nav-item">
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">
-                        <i class="fa fa-fw fa-sign-out fa-2x" title="Выйти из профиля"></i></a>
+                    <a class="nav-link" href="/logout" style="cursor: pointer">
+                        <i class="fa fa-fw fa-sign-out fa-2x"  title="Выйти из профиля"></i></a>
                 </li>
             </ul>
         </div>

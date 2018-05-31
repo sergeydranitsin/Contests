@@ -124,15 +124,6 @@ $(document).ready(function () {
         $('#our_hidden_ul_id').css('opacity', '0');
     })
 
-    $.ajax({
-        url: '/api/contest_works/1',
-        type: 'GET',
-        success: function (data) {
-            console.log('ok')
-        }
-    })
-    //open_concurs_by_id()
-
     $(window).scroll(function () {
         var scroll = $(window).scrollTop()
         //console.log(scroll)

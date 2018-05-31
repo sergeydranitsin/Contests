@@ -61,7 +61,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">Галерея работ
+                    <a class="nav-link" href="gallery_work" style="cursor: pointer">Галерея работ
                         <i class="fa fa-undo fa-2x" title="Войти в личный кабинет"></i>
                     </a>
                 </li>
@@ -69,8 +69,8 @@
                 <li class="nav-item">
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">
-                        <i class="fa fa-fw fa-sign-out fa-2x" title="Выйти из профиля"></i></a>
+                    <a class="nav-link" href="/logout" style="cursor: pointer">
+                        <i class="fa fa-fw fa-sign-out fa-2x"  title="Выйти из профиля"></i></a>
                 </li>
             </ul>
         </div>
@@ -80,16 +80,16 @@
 </nav>
 
 
-            <section class="page_background" id="portfolio">
+<section class="page_background" id="portfolio">
 
                 <div class="container">
                     <ul class="nav nav-tabs">
-                        <li class="nav active"><a data-toggle="tab" href="#works" class="nav-link a_cont" style="cursor: pointer">Работы</a></li>
-                        <li class="nav"><a data-toggle="tab" href="#contests" class="nav-link a_cont" style="cursor: pointer">Конкурсы</a></li>
+                        <li class="active"><a data-toggle="tab" href="#works" class="nav-link a_cont" style="cursor: pointer">Работы</a></li>
+                        <li><a data-toggle="tab" href="#contests" class="nav-link a_cont" style="cursor: pointer">Конкурсы</a></li>
                     </ul>
 
                     <div class="tab-content">
-                        <div id="works" class="tab-pane active in ">
+                        <div id="works" class="tab-pane fade in active ">
                             <div class="container" style="margin-top: 5%">
                                 <div class="row">
                                     {{--<div class="col-lg-12 text-center">--}}
@@ -189,7 +189,49 @@
                             </div>
                         </div>
                         <div id="contests" class="tab-pane fade">
-
+                            <div class="container" style="margin-top: 5%">
+                                <table class="table table-bordered">
+                                    <thead class="thead-dark">
+                                    <tr>
+                                        <th>ФИО</th>
+                                        <th>Конкурсы</th>
+                                        <th>Дипломы</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="table-light">
+                                        <td>Иванова Арина Михайловна</td>
+                                        <td>Тагильские мастера-2018</td>
+                                        <td>
+                                            <button class="btn btn-primary" data-dismiss="modal" type="button"
+                                                    value="download" title="Скачать">
+                                                <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Скачать
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <td>Иванова Арина Михайловна</td>
+                                        <td>Инеженер XXI века</td>
+                                        <td>
+                                            <button class="btn btn-primary" data-dismiss="modal" type="button"
+                                                    value="download" title="Скачать">
+                                                <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Скачать
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <td>Иванова Арина Михайловна</td>
+                                        <td>Инеженер XXI века</td>
+                                        <td>
+                                            <button class="btn btn-primary" data-dismiss="modal" type="button"
+                                                    value="download" title="Скачать">
+                                                <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Скачать
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -400,7 +442,7 @@
             }
         }
     });
-    
+
     $(document).on('click', '.portfolio-hover', function () {
         var id = $(this).attr('id')
 
