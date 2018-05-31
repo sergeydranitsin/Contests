@@ -180,13 +180,11 @@ $(document).ready(function () {
                             var path = obj['path']
                             console.log(path)
                             new_html += '<div class="spans_div without_p col-lg-3">\n' +
-                                '                        <span class="without_p spans_1 red pos-abs">\n' +
+                                '                        <span class="without_p spans_1 pos-abs">\n' +
                                 '                            <img src="' + path + '" class="previws_imgs"/>\n' +
                                 '                        </span>\n' +
                                 '                        <span class="without_p spans_1 pos-abs">\n' +
-                                '                            <i id="' + id + '" class="material-icons delete_icon pointer">\n' +
-                                '                                highlight_off\n' +
-                                '                            </i>\n' +
+                                '                            <img id="' + id + '" class="delete_icon pointer" src="img/del.png">'+
                                 '                        </span>\n' +
                                 '                    </div>';
                         }
@@ -225,6 +223,10 @@ $(document).ready(function () {
                     console.log(data)
                 }
             });
+
+            setTimeout(function () {
+                location.reload();
+            }, 300)
         }
     })
 
@@ -316,7 +318,6 @@ $(document).ready(function () {
     $(document).on('click', '.portfolio-hover', function() {
         var id = $(this).attr('id')
 
-
         $.ajax({
             url: '/api/work/'+id+'/rating',
             type: 'GET',
@@ -360,10 +361,19 @@ $(document).ready(function () {
                         $('#div_for_small_images').html(additional_imgs)
                     }
                 }
+                else{
+                    var main_photo = '<img class="img-fluid d-block mx-auto" src="img/image_icon.png" alt="">'
+                    $('#big_photo').html(main_photo)
+                    $('#div_for_small_images').html('')
+                }
 
             }
         })
 
+    })
+
+    $(document).on('click', '.close-modal', function () {
+        fill_stars_black([1,2,3,4,5])
     })
 
 })

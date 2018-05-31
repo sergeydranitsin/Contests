@@ -37,7 +37,6 @@
     <!-- Contact form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
-    <script src="js/gallery_of_competitions.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>

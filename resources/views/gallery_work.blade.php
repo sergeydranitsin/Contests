@@ -13,7 +13,6 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/gallery_of_competitions.js"></script>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -93,7 +92,6 @@
     </div>
 </nav>
 
-
             <section class="page_background" id="portfolio">
                 <div class="container">
                     <div class="row">
@@ -102,6 +100,7 @@
                             {{--<h3 class="section-subheading text-muted">конкурсных работ</h3>--}}
                         {{--</div>--}}
                     </div>
+
                     <div id = 'all_works_concurs'>
                         <!--<div class="row">
                             <div class="col-md-4 col-sm-6 portfolio-item">
@@ -248,7 +247,7 @@
                     <div class="col-lg-8 mx-auto">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2 class="text-uppercase">Название работы 1</h2>
+                            <h2 id="name_of_work_modal" class="text-uppercase"></h2>
                             <p class="item-intro text-muted"></p>
                             <div class="col-md-12" id="big_photo">
                                 <!--<img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">-->
@@ -262,10 +261,10 @@
                                     <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
                                 </div>-->
                             </div>
-                            <p>Описание работы номер 1....</p>
+                            <p id="work_descr_modal"></p>
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
-                                <li>Категория: Доклад</li>
+                                <!--<li>Категория: Доклад</li>-->
                             </ul>
 
                             <div class="stars">
@@ -525,7 +524,7 @@
 
                 <form id="uploading_form" enctype="multipart/form-data">
                     <input name="file" type="file"/>
-                    <input type="button" id="uploading" value="Upload"/>
+                    <input type="button" id="uploading" value="Прикрепить"/>
                 </form>
                 <p id="limit_for_photos"></p>
                 <progress class="dis_none"></progress>
@@ -635,9 +634,7 @@
                     '                            <img src="'+path+'" class="previws_imgs"/>\n' +
                     '                        </span>\n' +
                     '                        <span class="without_p spans_1 pos-abs">\n' +
-                    '                            <i id="'+id+'" class="material-icons delete_icon pointer">\n' +
-                    '                                highlight_off\n' +
-                    '                            </i>\n' +
+                    '                            <img id="'+id+'" class="delete_icon pointer" src="img/del.png">\n' +
                     '                        </span>\n' +
                     '                    </div>';
             }
@@ -705,9 +702,7 @@
                                 '                            <img src="'+path+'" class="previws_imgs"/>\n' +
                                 '                        </span>\n' +
                                 '                        <span class="without_p spans_1 pos-abs">\n' +
-                                '                            <i id="'+id+'" class="material-icons delete_icon pointer">\n' +
-                                '                                highlight_off\n' +
-                                '                            </i>\n' +
+                                '                            <img id="'+id+'" class="delete_icon pointer" src="img/del.png">\n' +
                                 '                        </span>\n' +
                                 '                    </div>';
                         }
@@ -719,6 +714,7 @@
         });
     });
     function printing_worcks(data){
+
         var works = data['data']
         var new_html = ''
         for(var i=0; i<works.length; i++){
@@ -729,6 +725,24 @@
             var work_name = w['name']
             if(w['images'].length>0){
                 var img = w['images'][0]['path']
+                //console.log(img)
+                new_html+='<div class="for-inline col-md-4 col-sm-6 portfolio-item">\n' +
+                    '                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">\n' +
+                    '                    <div class="portfolio-hover" id="'+work_id+'">\n' +
+                    '                        <div class="portfolio-hover-content">\n' +
+                    '                            <i class="fa fa-plus fa-3x"></i>\n' +
+                    '                        </div>\n' +
+                    '                    </div>\n' +
+                    '                    <img class="img-fluid" src="'+img+'" alt="">\n' +
+                    '                </a>\n' +
+                    '                <div class="portfolio-caption">\n' +
+                    '                    <h4>'+work_name+'</h4>\n' +
+                    '                    <p class="text-muted">Автор</p>\n' +
+                    '                </div>\n' +
+                    '            </div>'
+            }
+            else{
+                var img = 'img/image_icon.png'
                 //console.log(img)
                 new_html+='<div class="for-inline col-md-4 col-sm-6 portfolio-item">\n' +
                     '                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">\n' +

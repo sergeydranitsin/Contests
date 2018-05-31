@@ -35,7 +35,6 @@
     <!-- Contact form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
-    <script src="js/gallery_of_competitions.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.min.js"></script>
@@ -502,42 +501,36 @@
     var url = new URL(our_location);
     var hidden_id = url.searchParams.get("work_id");
 
-   // $('#all_works_concurs').html('GECNJ')
-
-    // console.log(hidden_id)
-    // /contest_works/
-
     $.ajax({
-        url: '/api/contest_works/'+hidden_id,
+        url: '/api/user',
         type: 'GET',
         success: function(data) {
             console.log(data)
         }
     });
 
+   // $('#all_works_concurs').html('GECNJ')
+
+    // console.log(hidden_id)
+    // /contest_works/
+
+    /*$.ajax({
+        url: '/api/contest_works/'+hidden_id,
+        type: 'GET',
+        success: function(data) {
+            console.log(data)
+        }
+    });*/
+
     // adding a new work
 
     //'name', 'description', 'id_contest'
 
-    $('#btn_add_work').on('click', function(){
+    /*$('#btn_add_work').on('click', function(){
         var work_name = $('#name_work').val()
         var work_description = $('#work_description').val()
         console.log(work_name+' '+work_description+' id:'+hidden_id)
-
-        /*
-        $.ajax({
-            url: '/api/work',
-            type: 'POST',
-            data:{
-                'name': ,
-                'description': ,
-                'id_contest': hidden_id
-            }
-            success: function(data) {
-                console.log(data)
-            }
-        });*/
-    })
+    })*/
 
 
 
