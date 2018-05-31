@@ -57,12 +57,12 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">Галерея конкурсов
+                    <a class="nav-link" href="gallery_of_competitions" style="cursor: pointer">Галерея конкурсов
                         <i class="fa fa-undo fa-2x" title="Страница Галерея конкурсов"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">Галерея работ
+                    <a class="nav-link" href="gallery_work" style="cursor: pointer">Галерея работ
                         <i class="fa fa-undo fa-2x" title="Войти в личный кабинет"></i>
                     </a>
                 </li>
@@ -70,8 +70,8 @@
                 <li class="nav-item">
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">
-                        <i class="fa fa-fw fa-sign-out fa-2x" title="Выйти из профиля"></i></a>
+                    <a class="nav-link" href="/logout" style="cursor: pointer">
+                        <i class="fa fa-fw fa-sign-out fa-2x"  title="Выйти из профиля"></i></a>
                 </li>
             </ul>
         </div>
@@ -81,16 +81,16 @@
 </nav>
 
 
-            <section class="page_background" id="portfolio">
+<section class="page_background" id="portfolio">
 
                 <div class="container">
                     <ul class="nav nav-tabs">
-                        <li class="nav active"><a data-toggle="tab" href="#works" class="nav-link a_cont" style="cursor: pointer">Работы</a></li>
-                        <li class="nav"><a data-toggle="tab" href="#contests" class="nav-link a_cont" style="cursor: pointer">Конкурсы</a></li>
+                        <li class="active"><a data-toggle="tab" href="#works" class="nav-link a_cont" style="cursor: pointer">Работы</a></li>
+                        <li><a data-toggle="tab" href="#contests" class="nav-link a_cont" style="cursor: pointer">Конкурсы</a></li>
                     </ul>
 
                     <div class="tab-content">
-                        <div id="works" class="tab-pane active in ">
+                        <div id="works" class="tab-pane fade in active ">
                             <div class="container" style="margin-top: 5%">
                                 <div class="row">
                                     {{--<div class="col-lg-12 text-center">--}}
@@ -307,6 +307,7 @@
                                 <li>Дата: Январь 2018</li>
                                 <li>Категория: Доклад</li>
                             </ul>
+
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
                                 Закрыть работу</button>
