@@ -161,7 +161,7 @@ Route::group(['prefix' => 'api'], function () {
         foreach ($works as &$work) {
 //            $work['images'] = Image::where('id_work', $work->id)->get();
             $work['images'] = $work->images;
-            $work['rating'] = round(Vote::where('id_work', $id)->avg('vote'), 1);
+            $work['rating'] = round(Vote::where('id_work', $work->id)->avg('vote'), 1);
             $work['user_vote'] = null;
             if ($user) {
                 $v = Vote::where('id_user', $user->id)->where('id_work', $work->id)->first(['vote']);
