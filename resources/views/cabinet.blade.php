@@ -190,7 +190,49 @@
                             </div>
                         </div>
                         <div id="contests" class="tab-pane fade">
-
+                            <div class="container" style="margin-top: 5%">
+                                <table class="table table-bordered">
+                                    <thead class="thead-dark">
+                                    <tr>
+                                        <th>ФИО</th>
+                                        <th>Конкурсы</th>
+                                        <th>Дипломы</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="table-light">
+                                        <td>Иванова Арина Михайловна</td>
+                                        <td>Тагильские мастера-2018</td>
+                                        <td>
+                                            <button class="btn btn-primary" data-dismiss="modal" type="button"
+                                                    value="download" title="Скачать">
+                                                <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Скачать
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <td>Иванова Арина Михайловна</td>
+                                        <td>Инеженер XXI века</td>
+                                        <td>
+                                            <button class="btn btn-primary" data-dismiss="modal" type="button"
+                                                    value="download" title="Скачать">
+                                                <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Скачать
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-light">
+                                        <td>Иванова Арина Михайловна</td>
+                                        <td>Инеженер XXI века</td>
+                                        <td>
+                                            <button class="btn btn-primary" data-dismiss="modal" type="button"
+                                                    value="download" title="Скачать">
+                                                <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Скачать
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
