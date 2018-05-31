@@ -241,24 +241,34 @@ Route::group(['prefix' => 'api'], function () {
         if (Auth::check()) {
             $user = Auth::user();
             if ($request->has(['name', 'description', 'id_contest'])) {
-                $work = new Work;
-                $work->name = $request->input('name');
-                $work->description = $request->input('description');
-                $work->id_contest = $request->input('id_contest');
-                $work->id_creator = $user->id;
-                $work->save();
-                $id_work = $work->id;
+                $id_contest = $request->input('id_contest');
+                $contest = Contest::find($id_contest);
+                $status = get_contest_status($contest);
+                if ($status == 'qualification') {
+                    $work = new Work;
+                    $work->name = $request->input('name');
+                    $work->description = $request->input('description');
+                    $work->id_contest = $id_contest;
+                    $work->id_creator = $user->id;
+                    $work->save();
+                    $id_work = $work->id;
 
-                $images = Image::where('id_creator', $user->id)->whereNull('id_work')->get();
-                foreach ($images as $img) {
-                    $img->id_work = $id_work;
-                    $img->save();
+                    $images = Image::where('id_creator', $user->id)->whereNull('id_work')->get();
+                    foreach ($images as $img) {
+                        $img->id_work = $id_work;
+                        $img->save();
+                    }
+
+                    return response(array(
+                        'ok' => true,
+                        'id_work' => $id_work
+                    ));
+                } else {
+                    return response(array(
+                        'ok' => false,
+                        'error' => 'not in qualification'
+                    ));
                 }
-
-                return response(array(
-                    'ok' => true,
-                    'id_work' => $id_work
-                ));
             } else {
                 return response(array(
                     'ok' => false,
@@ -466,19 +476,24 @@ Route::group(['prefix' => 'api'], function () {
     Route::post("/work/{id}/vote/{vote}", function (Request $request, $id, $vote) {
         if (Auth::check()) {
             $user = Auth::user();
-
-            $v = Vote::where('id_user', $user->id)->where('id_work', $id)->first();
-            if ($v) {
-                $v->vote = $vote;
-                $v->save();
-                return response(array('ok' => 'vote changed'));
+            $contest = Contest::find(Work::find($id)->id_contest);
+            $status = get_contest_status($contest);
+            if ($status == 'vote') {
+                $v = Vote::where('id_user', $user->id)->where('id_work', $id)->first();
+                if ($v) {
+                    $v->vote = $vote;
+                    $v->save();
+                    return response(array('ok' => 'vote changed'));
+                } else {
+                    $v = new Vote();
+                    $v->id_user = $user->id;
+                    $v->id_work = $id;
+                    $v->vote = $vote;
+                    $v->save();
+                    return response(array('ok' => 'true'));
+                }
             } else {
-                $v = new Vote();
-                $v->id_user = $user->id;
-                $v->id_work = $id;
-                $v->vote = $vote;
-                $v->save(); //todo check
-                return response(array('ok' => 'true'));
+                return response(array('ok' => 'false', 'error' => 'can\'t vote'));
             }
         } else {
             return response('Unauthenticated', 401);
