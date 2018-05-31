@@ -56,7 +56,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer">Галерея конкурсов
+                    <a class="nav-link" href="/gallery_of_competitions" style="cursor: pointer">Галерея конкурсов
                         <i class="fa fa-undo fa-2x" title="Страница Галерея конкурсов"></i>
                     </a>
                 </li>
@@ -98,7 +98,7 @@
                                     {{--</div>--}}
                                 </div>
                                 <div id = 'all_works_concurs'>
-                                    <div class="row">
+                                    <!--<div class="row">
                                         <div class="col-md-4 col-sm-6 portfolio-item">
                                             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
                                                 <div class="portfolio-hover">
@@ -183,7 +183,7 @@
                                                 <p class="text-muted">Photography</p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
                                 </div>
 
                             </div>
@@ -252,60 +252,26 @@
                     <div class="col-lg-8 mx-auto">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2 class="text-uppercase">Название работы 1</h2>
+                            <h2 class="name_of_work_modal" id="name_of_work_modal"></h2>
                             <p class="item-intro text-muted"></p>
-                            <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
-                            <p>Описание работы номер 1....</p>
-                            <ul class="list-inline">
-                                <li>Дата: Январь 2018</li>
-                                <li>Категория: Доклад</li>
-                            </ul>
-                            <div class="stars">
-                                <span id="star_1" class="fa fa-star fa-2x our_stars"></span>
-                                <span id="star_2" class="fa fa-star fa-2x our_stars"></span>
-                                <span id="star_3" class="fa fa-star fa-2x our_stars"></span>
-                                <span id="star_4" class="fa fa-star fa-2x our_stars"></span>
-                                <span id="star_5" class="fa fa-star fa-2x our_stars"></span>
-                                {{--<span id="rater5" class="star-rating" style="width: 80px; height: 16px; background-size: 16px;" data-title="1/5" data-rating="undefined">--}}
-                                    {{--<div class="star-value" style="background-size: 16px; width: 0%;"></div>--}}
-                                {{--</span>--}}
-                                <span class="live-rating"></span>
+                            <div class="col-md-12" id="big_photo">
+                                <!--<img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">-->
                             </div>
-
-
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fa fa-times"></i>
-                                Закрыть работу</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 2 -->
-<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="text-uppercase">Название работы 1</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
-                            <p>Описание работы номер 1....</p>
+                            <p align="center" id="rating"></p>
+                            <div class="col-md-12" id="div_for_small_images">
+                                <!--<div class="col-md-4" class="small_photos">
+                                    <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                                </div>
+                                <div class="col-md-4" class="small_photos">
+                                    <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                                </div>-->
+                            </div>
+                            <p id="work_descr_modal"></p>
                             <ul class="list-inline">
                                 <li>Дата: Январь 2018</li>
-                                <li>Категория: Доклад</li>
                             </ul>
+                            <p id="status_work"></p>
+
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
                                 Закрыть работу</button>
@@ -317,137 +283,6 @@
     </div>
 </div>
 
-<!-- Modal 3 -->
-<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="text-uppercase">Название работы 1</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
-                            <p>Описание работы номер 1....</p>
-                            <ul class="list-inline">
-                                <li>Дата: Январь 2018</li>
-                                <li>Категория: Доклад</li>
-                            </ul>
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fa fa-times"></i>
-                                Закрыть работу</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 4 -->
-<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="text-uppercase">Название работы 1</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
-                            <p>Описание работы номер 1....</p>
-                            <ul class="list-inline">
-                                <li>Дата: Январь 2018</li>
-                                <li>Категория: Доклад</li>
-                            </ul>
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fa fa-times"></i>
-                                Закрыть работу</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 5 -->
-<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="text-uppercase">Название работы 1</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
-                            <p>Описание работы номер 1....</p>
-                            <ul class="list-inline">
-                                <li>Дата: Январь 2018</li>
-                                <li>Категория: Доклад</li>
-                            </ul>
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fa fa-times"></i>
-                                Закрыть работу</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 6 -->
-<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="text-uppercase">Название работы 1</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
-                            <p>Описание работы номер 1....</p>
-                            <ul class="list-inline">
-                                <li>Дата: Январь 2018</li>
-                                <li>Категория: Доклад</li>
-                            </ul>
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fa fa-times"></i>
-                                Закрыть работу</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- The Modal add work -->
 <div class="modal fade" id="myModal_add_work">
     <div class="modal-dialog">
@@ -505,10 +340,127 @@
         url: '/api/user',
         type: 'GET',
         success: function(data) {
-            console.log(data)
+            var works = data['works']
+            var new_html = ''
+            for (var i=0; i<works.length; i++){
+                var w = works[i]
+                var id = w['id']
+                var name = w['name']
+                var rat = w['rating']
+                var check = w['is_verified']
+                if(check===1){
+                    var status_t = 'Принято'
+                }
+                if(check===0){
+                    var status_t = 'Отклонено'
+                }
+                if(check!==0&&check!==1){
+                    var status_t = 'Ожидает проверки'
+                }
+                if(w['images'].length>0){
+                    var img = w['images'][0]['path']
+                    //console.log(img)
+                    new_html+='<div class="col-md-4 col-sm-6 portfolio-item for-inline">\n' +
+                        '                                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">\n' +
+                        '                                                <div class="portfolio-hover" id="'+id+'">\n' +
+                        '                                                    <div class="portfolio-hover-content">\n' +
+                        '                                                        <i class="fa fa-plus fa-3x"></i>\n' +
+                        '                                                    </div>\n' +
+                        '                                                </div>\n' +
+                        '                                                <img class="img-fluid" src="'+img+'" alt="">\n' +
+                        '                                            </a>\n' +
+                        '                                            <div class="portfolio-caption">\n' +
+                        '                                                <h4>'+name+'</h4>\n' +
+                        '                                                <p class="text-muted">Текущий рейтинг: '+rat+'</p>\n' +
+                        '                                                <p class="text-muted">Статус: '+status_t+'</p>\n' +
+                        '                                            </div>\n' +
+                        '                                        </div>'
+                }
+                else{
+                    var img = 'img/image_icon.png'
+                    //console.log(img)
+                    new_html+='<div class="col-md-4 col-sm-6 portfolio-item for-inline">\n' +
+                        '                                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">\n' +
+                        '                                                <div class="portfolio-hover" id="'+id+'">\n' +
+                        '                                                    <div class="portfolio-hover-content">\n' +
+                        '                                                        <i class="fa fa-plus fa-3x"></i>\n' +
+                        '                                                    </div>\n' +
+                        '                                                </div>\n' +
+                        '                                                <img class="img-fluid" src="'+img+'" alt="">\n' +
+                        '                                            </a>\n' +
+                        '                                            <div class="portfolio-caption">\n' +
+                        '                                                <h4>'+name+'</h4>\n' +
+                        '                                                <p class="text-muted">Текущий рейтинг: '+rat+'</p>\n' +
+                        '                                                <p class="text-muted">Статус: '+status_t+'</p>\n' +
+                        '                                            </div>\n' +
+                        '                                        </div>'
+                }
+                $('#all_works_concurs').html(new_html)
+
+            }
         }
     });
+    
+    $(document).on('click', '.portfolio-hover', function () {
+        var id = $(this).attr('id')
 
+        //console.log(id)
+        $.ajax({
+            url: '/api/work/'+id,
+            type: 'GET',
+            success: function (data) {
+                console.log(data)
+                var works = data['data']
+                var new_html = ''
+                //console.log(data)
+                var w = data;
+                var work_id = w['id']
+                var work_name = w['name']
+                var descr = w['description']
+                var check = w['is_verified']
+                var rat = w['rating']
+                if(check===1){
+                    var status_t = 'Принято'
+                }
+                if(check===0){
+                    var status_t = 'Отклонено'
+                }
+                if(check!==0&&check!==1){
+                    var status_t = 'Ожидает проверки'
+                }
+
+                $('#rating').html('Текущий рейтинг работы: '+rat)
+                $('#status_work').html('Статус работы: '+status_t)
+                $('#name_of_work_modal').html(work_name)
+                $('#work_descr_modal').html(descr)
+                if(w['images'].length>0){
+                    var path = w['images'][0]['path']
+                    var main_photo = '<img class="img-fluid d-block mx-auto" src="'+path+'" alt="">'
+                    $('#big_photo').html(main_photo)
+                    var arr = w['images']
+                    var additional_imgs = ''
+                    for(var i=0; i<arr.length; i++){
+                        var path = w['images'][i]['path']
+                        additional_imgs += '<div class="col-md-4" class="small_photos">\n' +
+                            '                                    <img class="img-fluid d-block mx-auto small_photos" src="'+path+'" alt="">\n' +
+                            '                                </div>'
+                        $('#div_for_small_images').html(additional_imgs)
+                    }
+                }
+                else{
+                    var main_photo = '<img class="img-fluid d-block mx-auto" src="img/image_icon.png" alt="">'
+                    $('#big_photo').html(main_photo)
+                    $('#div_for_small_images').html('')
+                }
+
+            }
+        })
+    })
+
+    $('.close-modal').on('click', function(){
+        $('#big_photo').html('')
+        $('#div_for_small_images').html('')
+    })
    // $('#all_works_concurs').html('GECNJ')
 
     // console.log(hidden_id)
