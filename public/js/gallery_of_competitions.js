@@ -336,8 +336,10 @@ $(document).ready(function () {
                 var work_id = w['id']
                 var work_name = w['name']
                 var descr = w['description']
+                var rat = w['rating']
                 $('#name_of_work_modal').html(work_name)
                 $('#work_descr_modal').html(descr)
+                $('#rating').html('Текущий рейтинг работы: '+rat)
                 if(w['images'].length>0){
                     var path = w['images'][0]['path']
                     var main_photo = '<img class="img-fluid d-block mx-auto" src="'+path+'" alt="">'

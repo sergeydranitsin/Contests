@@ -266,7 +266,7 @@
                                 <li>Дата: Январь 2018</li>
                                 <!--<li>Категория: Доклад</li>-->
                             </ul>
-
+                            <p align="center" id="rating"></p>
                             <div class="stars">
                                 <span id="star_1" class="fa fa-star fa-2x our_stars"></span>
                                 <span id="star_2" class="fa fa-star fa-2x our_stars"></span>
@@ -278,7 +278,7 @@
                                 {{--</span>--}}
                                 <span class="live-rating"></span>
                             </div>
-
+                            <p id="status_work"></p>
                             <button class="btn btn-primary" data-dismiss="modal" type="button">
                                 <i class="fa fa-times"></i>
                                 Закрыть работу</button>
@@ -289,166 +289,6 @@
         </div>
     </div>
 </div>
-
-<!-- Modal 2 -->
-<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="text-uppercase">Название работы 1</h2>
-                            <p class="item-intro text-muted"></p>
-
-
-                            <p>Описание работы номер 1....</p>
-                            <ul class="list-inline">
-                                <li>Дата: Январь 2018</li>
-                                <li>Категория: Доклад</li>
-                            </ul>
-
-                            <div class="stars">
-                                <span id="star_1" class="fa fa-star fa-2x our_stars"></span>
-                                <span id="star_2" class="fa fa-star fa-2x our_stars"></span>
-                                <span id="star_3" class="fa fa-star fa-2x our_stars"></span>
-                                <span id="star_4" class="fa fa-star fa-2x our_stars"></span>
-                                <span id="star_5" class="fa fa-star fa-2x our_stars"></span>
-                                {{--<span id="rater5" class="star-rating" style="width: 80px; height: 16px; background-size: 16px;" data-title="1/5" data-rating="undefined">--}}
-                                    {{--<div class="star-value" style="background-size: 16px; width: 0%;"></div>--}}
-                                {{--</span>--}}
-                                <span class="live-rating"></span>
-                            </div>
-
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fa fa-times"></i>
-                                Закрыть работу</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 3 -->
-<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="text-uppercase">Название работы 1</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
-                            <p>Описание работы номер 1....</p>
-                            <ul class="list-inline">
-                                <li>Дата: Январь 2018</li>
-                                <li>Категория: Доклад</li>
-                            </ul>
-
-                            <div class="stars">
-                                <span id="star_1" class="fa fa-star fa-2x our_stars"></span>
-                                <span id="star_2" class="fa fa-star fa-2x our_stars"></span>
-                                <span id="star_3" class="fa fa-star fa-2x our_stars"></span>
-                                <span id="star_4" class="fa fa-star fa-2x our_stars"></span>
-                                <span id="star_5" class="fa fa-star fa-2x our_stars"></span>
-                                {{--<span id="rater5" class="star-rating" style="width: 80px; height: 16px; background-size: 16px;" data-title="1/5" data-rating="undefined">--}}
-                                    {{--<div class="star-value" style="background-size: 16px; width: 0%;"></div>--}}
-                                {{--</span>--}}
-                                <span class="live-rating"></span>
-                            </div>
-
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fa fa-times"></i>
-                                Закрыть работу</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 4 -->
-<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="text-uppercase">Название работы 1</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
-                            <p>Описание работы номер 1....</p>
-                            <ul class="list-inline">
-                                <li>Дата: Январь 2018</li>
-                                <li>Категория: Доклад</li>
-                            </ul>
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fa fa-times"></i>
-                                Закрыть работу</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 5 -->
-<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl"></div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2 class="text-uppercase">Название работы 1</h2>
-                            <p class="item-intro text-muted"></p>
-                            <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
-                            <p>Описание работы номер 1....</p>
-                            <ul class="list-inline">
-                                <li>Дата: Январь 2018</li>
-                                <li>Категория: Доклад</li>
-                            </ul>
-                            <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                <i class="fa fa-times"></i>
-                                Закрыть работу</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Modal 6 -->
 <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -723,6 +563,8 @@
 
             var work_id = w['id']
             var work_name = w['name']
+            var rat = w['rating']
+            console.log(rat)
             if(w['images'].length>0){
                 var img = w['images'][0]['path']
                 //console.log(img)
@@ -737,6 +579,7 @@
                     '                </a>\n' +
                     '                <div class="portfolio-caption">\n' +
                     '                    <h4>'+work_name+'</h4>\n' +
+                    '                    <p class="text-muted">Текущий рейтинг: '+rat+'</p>\n' +
                     '                    <p class="text-muted">Автор</p>\n' +
                     '                </div>\n' +
                     '            </div>'
@@ -755,6 +598,7 @@
                     '                </a>\n' +
                     '                <div class="portfolio-caption">\n' +
                     '                    <h4>'+work_name+'</h4>\n' +
+                    '                    <p class="text-muted">Текущий рейтинг: '+rat+'</p>\n' +
                     '                    <p class="text-muted">Автор</p>\n' +
                     '                </div>\n' +
                     '            </div>'
