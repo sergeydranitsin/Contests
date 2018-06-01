@@ -53,6 +53,9 @@ $(document).ready(function () {
     $(document).on('click', '#sl_send_info_about_new_contest', function () {
         is_clear = search_for_clear_inputs(['#sl_name_of_contest', '#sl_category_of_contest', '#sl_description_of_contest'])
         var errors_text = 'Вы не заполнили одно или несколько полей'
+        var qualification = $('#sl_qualification').data('daterangepicker').startDate.format('YYYY-MM-DD')
+        var vote = $('#sl_vote').data('daterangepicker').startDate.format('YYYY-MM-DD')
+        var outcomes = $('#sl_outcomes').data('daterangepicker').startDate.format('YYYY-MM-DD')
         if (is_clear !== 'ok') {
             $('#errors_p_in_adding_contests_form').html(errors_text)
         }
@@ -60,9 +63,6 @@ $(document).ready(function () {
             var cont_name = $('#sl_name_of_contest').val()
             var cont_categor = $('#sl_category_of_contest').val()
             var cont_description = $('#sl_description_of_contest').val()
-            var qualification = $('#sl_qualification').data('daterangepicker').startDate.format('YYYY-MM-DD') //Вика, п###ец. Нельзя было нормальный datepicker взять?!
-            var vote = $('#sl_vote').data('daterangepicker').startDate.format('YYYY-MM-DD')
-            var outcomes = $('#sl_outcomes').data('daterangepicker').startDate.format('YYYY-MM-DD')
 
             //'name', 'category', 'description'
 
@@ -75,16 +75,35 @@ $(document).ready(function () {
                 'outcomes': outcomes,
             };
 
-            console.log(data);
-            $.ajax({
-                url: '/api/contest',
-                type: 'POST',
-                data: data,
-                success: function (data) {
-                    console.log(data)
-                }
-            });
+            if(qualification>=vote||qualification>=outcomes||vote>=outcomes){
+                var errors_text = 'Вы неправильно указали даты'
+                $('#errors_p_in_adding_contests_form').html(errors_text)
+                $('#good_mes_p_in_adding_contests_form').html('')
+            }
+            else {
+                $.ajax({
+                    url: '/api/contest',
+                    type: 'POST',
+                    data: data,
+                    success: function (data) {
+                        console.log(data)
+                    }
+                });
+                $('#errors_p_in_adding_contests_form').html('')
+                $('#good_mes_p_in_adding_contests_form').html('Новый конкурс успешно добавлен')
+                setTimeout(function () {
+                    location.reload();
+                }, 300)
+            }
         }
+    })
+    
+    $('#close_modal_add_contest').on('click', function () {
+        $('#sl_description_of_contest').val('')
+        $('#sl_category_of_contest').val('')
+        $('#sl_name_of_contest').val('')
+        $('#good_mes_p_in_adding_contests_form').val('')
+        $('#errors_p_in_adding_contests_form').val('')
     })
 
     $.ajax({
@@ -338,6 +357,11 @@ $(document).ready(function () {
             url: '/api/work/'+id,
             type: 'GET',
             success: function (data) {
+                var status = data['contest']
+                if(status!=='vote'){
+                    $('#stars_div').html('')
+                }
+                //console.log(data)
                 var works = data['data']
                 var new_html = ''
                 //console.log(data)
@@ -376,6 +400,11 @@ $(document).ready(function () {
 
     $(document).on('click', '.close-modal', function () {
         fill_stars_black([1,2,3,4,5])
+    })
+    
+    $(document).on('click', '.small_photos', function () {
+        var new_img = $(this).attr('src')
+        $('#big_photo').html('<img class="img-fluid d-block mx-auto" src="'+new_img+'" alt="">')
     })
 
 })

@@ -75,9 +75,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="cursor: pointer" data-toggle="modal" id="open_modal_for_adding_work" data-target="#myModal_add_work">Добавить работу
-                        <i class="fa fa-plus-circle fa-2x" title="Добавить работу"></i>
-                    </a>
+                    <a class="nav-link" style="cursor: pointer" data-toggle="modal" id="open_modal_for_adding_work" data-target="#myModal_add_work"></a>
                 </li>
                 <li class="nav-item">
                 </li>
@@ -267,7 +265,7 @@
                                 <!--<li>Категория: Доклад</li>-->
                             </ul>
                             <p align="center" id="rating"></p>
-                            <div class="stars">
+                            <div class="stars" id="stars_div">
                                 <span id="star_1" class="fa fa-star fa-2x our_stars"></span>
                                 <span id="star_2" class="fa fa-star fa-2x our_stars"></span>
                                 <span id="star_3" class="fa fa-star fa-2x our_stars"></span>
@@ -611,6 +609,11 @@
         url: '/api/contest/'+hidden_id,
         type: 'GET',
         success: function(data) {
+            var status = data['status']
+            //console.log(status)
+            if(status==='qualification'){
+                $('#open_modal_for_adding_work').html('Добавить работу <i class="fa fa-plus-circle fa-2x" title="Добавить работу"></i>')
+            }
             printing_worcks(data)
         }
     });

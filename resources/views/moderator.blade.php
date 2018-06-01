@@ -387,7 +387,7 @@
             <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title">Добавление конкурса</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" id="close_modal_add_contest">&times;</button>
             </div>
 
             <!-- Modal body -->
@@ -412,7 +412,8 @@
                     <button type="button" id="sl_send_info_about_new_contest" class="btn btn-primary btn_save">
                         Отправить
                     </button>
-                    <p id="errors_p_in_adding_contests_form"></p>
+                    <p id="errors_p_in_adding_contests_form" class="error_messages"></p>
+                    <p id="good_mes_p_in_adding_contests_form" class="good_messages"></p>
                 </form>
             </div>
 
