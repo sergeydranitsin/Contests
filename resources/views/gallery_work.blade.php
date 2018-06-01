@@ -460,7 +460,7 @@
         url: 'api/images',
         type: 'GET',
         success: function (data) {
-            console.log(data)
+            //console.log(data)
             var new_html = ''
             for(var i=0; i<data['images'].length; i++){
 
@@ -564,7 +564,7 @@
             var work_id = w['id']
             var work_name = w['name']
             var rat = w['rating']
-            console.log(rat)
+            //console.log(rat)
             if(w['images'].length>0){
                 var img = w['images'][0]['path']
                 //console.log(img)

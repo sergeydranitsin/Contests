@@ -394,11 +394,11 @@
                            placeholder="Название конкурса..."/>
                     <input id="sl_category_of_contest" class="form-control form_register" placeholder="Категория..."/>
                     <label>Начало подачи работ:</label>
-                    <input type="text" id="daterange" class="form-control search_group" name="daterange1" value="" />
+                    <input type="text" id="daterange_1" class="form-control search_group" name="daterange1" value="" />
                     <label>Начало голосования:</label>
-                    <input type="text" id="daterange" class="form-control search_group" name="daterange2" value="" />
+                    <input type="text" id="daterange_2" class="form-control search_group" name="daterange2" value="" />
                     <label>Окончание голосования:</label>
-                    <input type="text" id="daterange" class="form-control search_group" name="daterange3" value="" />
+                    <input type="text" id="daterange_3" class="form-control search_group" name="daterange3" value="" />
 
 
                     <label>Описание конкурса:</label>
