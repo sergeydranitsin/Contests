@@ -60,17 +60,26 @@ $(document).ready(function () {
             var cont_name = $('#sl_name_of_contest').val()
             var cont_categor = $('#sl_category_of_contest').val()
             var cont_description = $('#sl_description_of_contest').val()
+            var qualification = $('#sl_qualification').data('daterangepicker').startDate.format('YYYY-MM-DD') //Вика, п###ец. Нельзя было нормальный datepicker взять?!
+            var vote = $('#sl_vote').data('daterangepicker').startDate.format('YYYY-MM-DD')
+            var outcomes = $('#sl_outcomes').data('daterangepicker').startDate.format('YYYY-MM-DD')
 
             //'name', 'category', 'description'
 
+            var data = {
+                'name': cont_name,
+                'category': cont_categor,
+                'description': cont_description,
+                'qualification': qualification,
+                'vote': vote,
+                'outcomes': outcomes,
+            };
+
+            console.log(data);
             $.ajax({
                 url: '/api/contest',
                 type: 'POST',
-                data: {
-                    'name': cont_name,
-                    'category': cont_categor,
-                    'description': cont_description
-                },
+                data: data,
                 success: function (data) {
                     console.log(data)
                 }

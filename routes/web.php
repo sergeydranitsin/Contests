@@ -181,16 +181,31 @@ Route::group(['prefix' => 'api'], function () {
 
     Route::post("/contest", function (Request $request) {
         if (Auth::check() && Auth::user()->moderator) {
-            if ($request->has(['name', 'category', 'description'])) {
+            if ($request->has(['name', 'category', 'description', 'qualification', 'vote', 'outcomes'])) {
                 $contest = new Contest;
                 $contest->name = $request->input('name');
                 $contest->description = $request->input('description');
                 $contest->category = $request->input('category');
-                $contest->save();
-                return response(array(
-                    'ok' => true,
-                    'id' => $contest->id
-                ));
+
+                $qualification = $request->input('qualification');
+                $vote = $request->input('vote');
+                $outcomes = $request->input('outcomes');
+
+                if (strtotime($qualification) < strtotime($vote) && strtotime($vote) < strtotime($outcomes)) {
+                    $contest->qualification = $qualification;
+                    $contest->vote = $vote;
+                    $contest->outcomes = $outcomes;
+                    $contest->save();
+                    return response(array(
+                        'ok' => true,
+                        'id' => $contest->id
+                    ));
+                } else {
+                    return response(array(
+                        'ok' => false,
+                        'error' => 'dates must be greater than each other (at least on a day)'
+                    ));
+                }
             } else {
                 return response(array(
                     'ok' => false,

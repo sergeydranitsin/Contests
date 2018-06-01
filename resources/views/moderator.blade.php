@@ -25,7 +25,7 @@
     <!-- Custom styles for this template -->
     <link href="css/agency.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css"/>
 
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -78,9 +78,12 @@
                         <i class="fa fa-filter fa-2x" title="Фильтрация работ"></i>
                     </a>
                     <ul class="our_hidden_ul" id="our_hidden_ul_id">
-                        <li class="filter_ul"><a class="filter_ul_item" id="get_good_w" href="#">Принятые работы</a></li>
-                        <li class="filter_ul"><a class="filter_ul_item" id="get_deleted_w" href="#">Непринятые работы</a></li>
-                        <li class="filter_ul"><a class="filter_ul_item" id="get_all_w" href="#">Ожидают проверки</a></li>
+                        <li class="filter_ul"><a class="filter_ul_item" id="get_good_w" href="#">Принятые работы</a>
+                        </li>
+                        <li class="filter_ul"><a class="filter_ul_item" id="get_deleted_w" href="#">Непринятые
+                                работы</a></li>
+                        <li class="filter_ul"><a class="filter_ul_item" id="get_all_w" href="#">Ожидают проверки</a>
+                        </li>
                     </ul>
                 </li>
 
@@ -93,7 +96,7 @@
                 <li class="nav-item">
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout"  style="cursor: pointer">
+                    <a class="nav-link" href="/logout" style="cursor: pointer">
                         <i class="fa fa-fw fa-sign-out fa-2x" title="Выйти из профиля"></i></a>
                 </li>
             </ul>
@@ -394,11 +397,12 @@
                            placeholder="Название конкурса..."/>
                     <input id="sl_category_of_contest" class="form-control form_register" placeholder="Категория..."/>
                     <label>Начало подачи работ:</label>
-                    <input type="text" id="daterange" class="form-control search_group" name="daterange1" value="" />
+                    <input type="text" id="sl_qualification" class="form-control search_group" name="daterange1"
+                           value=""/>
                     <label>Начало голосования:</label>
-                    <input type="text" id="daterange" class="form-control search_group" name="daterange2" value="" />
-                    <label>Окончание голосования:</label>
-                    <input type="text" id="daterange" class="form-control search_group" name="daterange3" value="" />
+                    <input type="text" id="sl_vote" class="form-control search_group" name="daterange2" value=""/>
+                    <label>Окончание конкурса:</label>
+                    <input type="text" id="sl_outcomes" class="form-control search_group" name="daterange3" value=""/>
 
 
                     <label>Описание конкурса:</label>
@@ -418,7 +422,7 @@
 </div>
 
 <script type="text/javascript">
-    $(function() {
+    $(function () {
         var arr = {
             singleDatePicker: true,
             showDropdowns: true,
@@ -456,9 +460,14 @@
                 ],
                 firstDay: 1
             },
-            applyClass:'apply_but'
+            applyClass: 'apply_but'
         };
-        $('input[name="daterange1"]').daterangepicker(arr);
+        $('input[name="daterange1"]').daterangepicker(arr, function (start) {
+            // var date = start.format('YYYY-MM-DD');
+            // console.log(date);
+            // console.log($(this));
+            // $(this).val(date);
+        });
         $('input[name="daterange2"]').daterangepicker(arr);
         $('input[name="daterange3"]').daterangepicker(arr);
 
