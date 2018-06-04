@@ -24,6 +24,6 @@ class Work extends Model
 
     public function contests()
     {
-        return $this->belongsTo('App\Contest', 'id', 'id_contest');
+        return $this->belongsTo('App\Contest', 'id_contest', 'id');
     }
 }

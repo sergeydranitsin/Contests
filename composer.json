@@ -11,6 +11,7 @@
         "jhaoda/socialite-odnoklassniki": "^3.0",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
+      "mpdf/mpdf": "^7.1",
         "socialiteproviders/vkontakte": "^3.2"
     },
     "require-dev": {
