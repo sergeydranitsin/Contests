@@ -89,7 +89,7 @@
                     </ul>
 
                     <div class="tab-content">
-                        <div id="works" class="tab-pane fade in active ">
+                        <div id="works" class="tab-pane in active ">
                             <div class="container" style="margin-top: 5%">
                                 <div class="row">
                                     {{--<div class="col-lg-12 text-center">--}}
@@ -189,28 +189,28 @@
                             </div>
                         </div>
                         <div id="contests" class="tab-pane fade">
-                            <div class="container" style="margin-top: 5%">
-                                <table class="table table-bordered">
+                            <div class="container" id="certificates_div" style="margin-top: 5%">
+                                <!--<table class="table table-bordered">
                                     <thead class="thead-dark">
                                     <tr>
-                                        <th>ФИО</th>
                                         <th>Конкурсы</th>
                                         <th>Дипломы</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+
                                     <tr class="table-light">
-                                        <td>Иванова Арина Михайловна</td>
                                         <td>Тагильские мастера-2018</td>
                                         <td>
-                                            <button class="btn btn-primary" data-dismiss="modal" type="button"
-                                                    value="download" title="Скачать">
-                                                <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Скачать
-                                            </button>
+                                            <form id="invisible_form" action="/api/user/certificate?id_contest=1" method="post" target="_blank">
+                                                <button class="btn btn-primary" data-dismiss="modal" type="submit"
+                                                        value="download" title="Скачать">
+                                                    <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Скачать
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                     <tr class="table-light">
-                                        <td>Иванова Арина Михайловна</td>
                                         <td>Инеженер XXI века</td>
                                         <td>
                                             <button class="btn btn-primary" data-dismiss="modal" type="button"
@@ -220,7 +220,6 @@
                                         </td>
                                     </tr>
                                     <tr class="table-light">
-                                        <td>Иванова Арина Михайловна</td>
                                         <td>Инеженер XXI века</td>
                                         <td>
                                             <button class="btn btn-primary" data-dismiss="modal" type="button"
@@ -229,8 +228,9 @@
                                             </button>
                                         </td>
                                     </tr>
+
                                     </tbody>
-                                </table>
+                                </table>-->
                             </div>
                         </div>
                     </div>
