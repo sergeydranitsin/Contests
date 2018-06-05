@@ -97,7 +97,8 @@ $(document).ready(function () {
             }
         }
     })
-    
+
+
     $('#close_modal_add_contest').on('click', function () {
         $('#sl_description_of_contest').val('')
         $('#sl_category_of_contest').val('')
@@ -120,6 +121,37 @@ $(document).ready(function () {
             $('#field_for_tName_private_cab').html(tName);
             $('#field_for_email_private_cab').html(email);
             $('#field_for_nick_private_cab').html(name);
+
+            var new_html = '<table class="table table-bordered">\n' +
+                '                                    <thead class="thead-dark">\n' +
+                '                                    <tr>\n' +
+                '                                        <th>Название конкурса</th>\n' +
+                '                                        <th>Сертификат участника</th>\n' +
+                '                                    </tr>\n' +
+                '                                    </thead>\n' +
+                '                                    <tbody>'
+
+            var contests = data['contests']
+
+            for(key in contests) {
+                var c = contests[key]
+                var id = c['id']
+                var name = c['name']
+                
+                new_html+='<tr class="table-light">\n' +
+                    '                                        <td>'+name+'</td>\n' +
+                    '                                        <td>\n' +
+                    '                                            <form id="invisible_form" action="/api/user/certificate?id_contest='+id+'" method="post" target="_blank">\n' +
+                    '                                                <button class="btn btn-primary" data-dismiss="modal" type="submit"\n' +
+                    '                                                        value="download" title="Скачать">\n' +
+                    '                                                    <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Скачать\n' +
+                    '                                                </button>\n' +
+                    '                                            </form>\n' +
+                    '                                        </td>\n' +
+                    '                                    </tr>'
+            }
+            new_html+='</tbody></table>'
+            $('#certificates_div').html(new_html)
         }
     })
 

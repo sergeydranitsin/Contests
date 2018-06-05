@@ -186,7 +186,11 @@
         </div>
     </div>
 </header>
-
+<!--
+    <form id="invisible_form" action="/api/user/certificate?id_contest=1" method="post" target="_blank">
+        <input id="new_window_parameter_1" name="parameter" type="submit" value="default">
+    </form>
+-->
 <!-- Services -->
 <section id="services">
     <div class="container">

@@ -97,10 +97,15 @@ Route::group(['prefix' => 'api'], function () {
             if (!$id) {
                 $user = Auth::user();
                 $works = Work::where('id_creator', $user->id)->get();
+                $user['contests'] = array();
                 foreach ($works as &$work) {
                     $work['images'] = $work->images;
+                    $contests = $user['contests'];
+                    array_push($contests, $work->contests);
+                    $user['contests'] = $contests;
 //                    $work['images'] = Image::where('id_work', $work->id)->get();
                 }
+                $user['contests'] = array_unique($user['contests']);
                 $user['works'] = $works;
                 return response($user);
             } else {
@@ -110,6 +115,61 @@ Route::group(['prefix' => 'api'], function () {
             return response('Unauthenticated', 401);
         }
     })->where('id', '[0-9]+');
+
+    Route::post("/user/certificate", function (Request $request) {
+        if (Auth::check()) {
+            $user = Auth::user();
+            $fio = $user->first_name . ' ' . $user->second_name;
+            if ($request->has(['id_contest'])) {
+                $contest = Contest::find($request['id_contest']);
+                $contest_name = $contest->name;
+                $year = explode('-', $contest->outcomes)[0];
+
+                $path = 'watermark.png';
+                $type = pathinfo($path, PATHINFO_EXTENSION);
+                $data = file_get_contents($path);
+                $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                $html = '
+<style>
+h1 {
+    color: rgb(0, 0, 120); 
+    font-size: 48px;
+}
+
+h2 {font-size: 32px;}
+h3 {font-size: 24px;}
+h4 {font-size: 16px;}
+
+
+</style>
+<body style="background: transparent url(' . $base64 . '); background-image-resize: 6;">
+<div style="padding: 7%; text-align: center;">
+<h1 >Диплом участника</h1>
+<hr>
+<h2>' . $fio . '</h2>
+<h4>принял участие в конкурсе</h4>
+<h3>' . $contest_name . '</h3>
+<h5>' . $year . '</h5>
+</div>
+</body>';
+
+                $mpdf = new \Mpdf\Mpdf();
+                $mpdf->allow_charset_conversion = true;
+                $mpdf->charset_in = 'UTF-8';
+                $mpdf->AddPage();
+                $mpdf->WriteHTML($html);
+                $path = 'seal.png';
+                $type = pathinfo($path, PATHINFO_EXTENSION);
+                $data = file_get_contents($path);
+                $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                $mpdf->Image($base64, 150, 220);
+//$mpdf->showWatermarkImage = true;
+                return $mpdf->Output($contest_name.".pdf", "D"); //or D
+            }
+        } else {
+            return response('Unauthenticated', 401);
+        }
+    });
 
     //region contests
 
