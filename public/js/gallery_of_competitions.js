@@ -141,7 +141,7 @@ $(document).ready(function () {
                 new_html+='<tr class="table-light">\n' +
                     '                                        <td>'+name+'</td>\n' +
                     '                                        <td>\n' +
-                    '                                            <form id="invisible_form" action="/api/user/certificate?id_contest='+id+'" method="post" target="_blank">\n' +
+                    '                                            <form id="invisible_form" action="/api/user/certificate?id_contest=' + id + '" method="post">\n' +
                     '                                                <button class="btn btn-primary" data-dismiss="modal" type="submit"\n' +
                     '                                                        value="download" title="Скачать">\n' +
                     '                                                    <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i> Скачать\n' +
