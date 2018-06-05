@@ -164,7 +164,7 @@ h4 {font-size: 16px;}
                 $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
                 $mpdf->Image($base64, 150, 220);
 //$mpdf->showWatermarkImage = true;
-                return $mpdf->Output("test.pdf", "I");
+                return $mpdf->Output("test.pdf", "D");
             }
         } else {
             return response('Unauthenticated', 401);
